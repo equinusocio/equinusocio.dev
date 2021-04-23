@@ -50,7 +50,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export -o dist",
+    "postbuild": "next export -o dist",
     "start": "next start",
     "test": "jest",
     "ts:check": "tsc --noEmit"
