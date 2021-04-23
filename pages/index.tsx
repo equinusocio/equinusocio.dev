@@ -7,13 +7,15 @@ const Home = ({ posts }: {posts: any[]}) => (
     <Meta title="Some awesome title" />
     <div>Something here</div>
 
-    {posts.map((item: Record<string, any>) => (
+    <div>{posts[0].fields.title}</div>
+
+    {/* {posts.map((item: Record<string, any>) => (
       <div>
         <span>{item.id}</span>
         —
         <span>{item.fields.title}</span>
       </div>
-    ))}
+    ))} */}
   </div>
 );
 
