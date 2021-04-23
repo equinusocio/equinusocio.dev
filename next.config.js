@@ -3,14 +3,17 @@
   @typescript-eslint/no-var-requires,
   global-require
 */
+const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withPlugins = require('next-compose-plugins');
 
-module.exports = () => {
-  const withBundleAnalyzer = require('@next/bundle-analyzer')({
-    enabled: process.env.ANALYZE === 'true',
-  });
-  return withBundleAnalyzer({
-    future: {
-      webpack5: true,
-    },
-  });
-};
+module.exports = withPlugins([
+  [
+    withBundleAnalyzer({
+      enabled: process.env.ANALYZE === 'true',
+    }),
+  ],
+], {
+  future: {
+    webpack5: true,
+  },
+});

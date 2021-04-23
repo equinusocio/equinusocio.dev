@@ -3,14 +3,15 @@
 import { client } from './client';
 
 export default async function getPosts() {
-  return client.getEntries({
-    content_type: 'blogPost',
-  }).then((response) => {
-    const posts = response.items.map(post => ({
+  try {
+    const posts = await client.getEntries({
+      content_type: 'blogPost',
+    });
+    return posts.items.map((post: Record<string, any>) => ({
       id: post.sys.id,
-      fields: post.fields,
+      ...post.fields,
     }));
-    return posts;
-  })
-    .catch((error) => { throw new Error(error); });
+  } catch (error) {
+    return console.error(error);
+  }
 }

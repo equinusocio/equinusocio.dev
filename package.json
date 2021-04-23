@@ -56,12 +56,13 @@
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "14.1.2",
-    "@native-elements/core": "^1.5.4",
+    "@mdx-js/react": "1.6.22",
     "contentful": "8.3.1",
     "next": "^10.1.3",
+    "next-compose-plugins": "2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-markdown": "6.0.1",
     "what-input": "^5.2.10"
   },
   "devDependencies": {
@@ -73,6 +74,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^5.1.2",
     "@types/jest": "^26.0.22",
+    "@types/mdx-js__react": "1.5.3",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",

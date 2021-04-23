@@ -1,21 +1,16 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import getPosts from '@/api/getPosts';
+import ReactMarkdown from 'react-markdown';
 
 const Home = ({ posts }: {posts: any[]}) => (
   <div>
     <Meta title="Some awesome title" />
     <div>Something here</div>
 
-    <div>{posts[0].fields.title}</div>
+    <div>{posts[0].title}</div>
+    <ReactMarkdown>{posts[0].body}</ReactMarkdown>
 
-    {/* {posts.map((item: Record<string, any>) => (
-      <div>
-        <span>{item.id}</span>
-        —
-        <span>{item.fields.title}</span>
-      </div>
-    ))} */}
   </div>
 );
 

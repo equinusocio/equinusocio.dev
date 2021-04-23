@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Default CSS definition for typescript
  */
@@ -13,9 +15,15 @@ declare module '*.svg' {
   export { svgComponent as ReactComponent };
 }
 
+declare module 'csstype' {
+  interface Properties {
+    [index: string]: any;
+  }
+}
+
 declare namespace NodeJS {
-  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
   export interface ProcessEnv {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     IS_DEV: boolean;
   }
 }
