@@ -2,13 +2,14 @@
 
 import { client } from './client';
 
-export default async function getPosts() {
+export default async function getPost(slug: string) {
   try {
-    const posts = await client.getEntries<Record<any, string>>({
+    const post = await client.getEntries<Record<any, string>>({
       content_type: 'blogPost',
+      'fields.slug': slug,
     });
 
-    return posts.items.map(post => post);
+    return post.items[0];
   } catch {
     return [];
   }
