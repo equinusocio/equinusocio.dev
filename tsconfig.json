@@ -28,6 +28,7 @@
     "paths": {
       "@/components/*": ["src/components/*"],
       "@/core/*": ["src/core/*"],
+      "@/api/*": ["api/*"],
     }
   },
   "exclude": [

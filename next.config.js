@@ -8,6 +8,9 @@ module.exports = () => {
   const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
   });
-
-  return withBundleAnalyzer();
+  return withBundleAnalyzer({
+    future: {
+      webpack5: true,
+    },
+  });
 };
