@@ -23,7 +23,10 @@ declare module 'csstype' {
 
 declare namespace NodeJS {
   export interface ProcessEnv {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
+    /* eslint-disable @typescript-eslint/naming-convention */
     IS_DEV: boolean;
+    NEXT_PUBLIC_CONTENTFUL_SPACE_ID: string;
+    NEXT_PUBLIC_CONTENTFUL_CDA_TOKEN: string;
+    NEXT_PUBLIC_CONTENTFUL_CPA_TOKEN: string;
   }
 }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Meta } from '@/components/Meta';
-import getPosts from '@/api/getPosts';
+import { getPosts } from '@/api/selectors';
 import Link from 'next/link';
 
 const Home = ({ posts }: any) => (
@@ -11,9 +11,9 @@ const Home = ({ posts }: any) => (
     <div>Blog</div>
 
     {posts.map((item: any) => (
-      <Link href={`/blog/${item.fields.slug}`}>
+      <Link key={item.id} href={`/blog/${encodeURIComponent(item.slug)}`}>
         <a>
-          {item.fields.title}
+          {item.title}
           {' '}
           —
         </a>

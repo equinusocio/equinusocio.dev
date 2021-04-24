@@ -1,15 +1,18 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import { client } from './client';
+import { client } from '@/api/client';
 
-export default async function getPost(slug: string) {
+export async function getPost(slug: string) {
   try {
     const post = await client.getEntries<Record<any, string>>({
       content_type: 'blogPost',
       'fields.slug': slug,
     });
 
-    return post.items[0];
+    return {
+      id: post.items[0].sys.id,
+      ...post.items[0].fields,
+    };
   } catch {
     return [];
   }
