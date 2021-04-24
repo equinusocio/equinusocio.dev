@@ -22,7 +22,7 @@ const Home = ({ posts }: any) => (
   </div>
 );
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getPosts();
 
   return {
