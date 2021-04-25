@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { client } from '@/api/client';
+import { EntriesResponse } from 'types/api';
 
 export type PostType = {
   id: string;
@@ -14,7 +15,7 @@ export type PostType = {
 
 export async function getPost(slug: string) {
   try {
-    const post = await client.getEntries<Record<any, string>>({
+    const post = await client.getEntries<EntriesResponse>({
       content_type: 'blogPost',
       'fields.slug': slug,
     });
@@ -22,7 +23,7 @@ export async function getPost(slug: string) {
     return {
       id: post.items[0].sys.id,
       ...post.items[0].fields,
-    } as PostType;
+    };
   } catch {
     return [];
   }

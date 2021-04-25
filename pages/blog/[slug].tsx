@@ -15,10 +15,8 @@ const Post = ({title, body}: PostType) => (
 export const getStaticPaths = async () => {
   const posts = await getPosts();
 
-  // Get the paths we want to pre-render based on posts
   const paths = posts.map((post: PostType) => ({
     params: {
-      id: post.id,
       slug: post.slug
     },
   }))
@@ -27,8 +25,8 @@ export const getStaticPaths = async () => {
 }
 
 
-export const getStaticProps = async ({ slug }: PostType) => {
-  const post = await getPost(slug);
+export const getStaticProps = async ({ params }: Record<string, any>) => {
+  const post = await getPost(params.slug);
 
   return {
     props: { ...post },
