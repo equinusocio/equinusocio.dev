@@ -9,9 +9,6 @@ module.exports = {
     /* More info at https://github.com/csstools/postcss-preset-env */
     'postcss-preset-env': {
       stage: 0,
-      features: {
-        'prefers-color-scheme-query': false,
-      },
       insertAfter: {
         'custom-media-queries': require('postcss-mixins')(),
       },

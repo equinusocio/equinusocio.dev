@@ -1,0 +1,24 @@
+.Text {
+  line-height: 1.5;
+  font-size: max(0.8rem, min(5vw, var(--font-size-18-px)));
+
+  &[data-text-size='small'] {
+    font-size: max(0.8rem, min(5vw, var(--font-size-13-px)));
+  }
+
+  &[data-text-size='big'] {
+    font-size: max(0.8rem, min(5vw, var(--font-size-24-px)));
+  }
+
+  &[data-text-weight='thin'] {
+    font-weight: 100;
+  }
+
+  &[data-text-weight='medium'] {
+    font-weight: 500;
+  }
+
+  &[data-text-weight='bold'] {
+    font-weight: 700;
+  }
+}

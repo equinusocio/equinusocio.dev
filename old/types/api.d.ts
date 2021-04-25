@@ -9,5 +9,5 @@ export type PostType = {
 }
 
 export type EntriesResponse = {
-  items: PostType[];
+  items: PostType[]
 }
