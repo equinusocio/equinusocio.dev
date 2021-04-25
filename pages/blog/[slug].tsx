@@ -1,21 +1,38 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import ReactMarkdown from 'react-markdown';
-import { getPost } from '@/api/selectors';
+import { getPost, getPosts } from '@/api/selectors';
+import { PostType } from '@/api/selectors/getPost';
 
-const Post = ({ post }: Record<string, any>) => (
+const Post = ({title, body}: PostType) => (
   <div>
     <Meta title="Some awesome title" />
-    <h1>{post.title}</h1>
-    <ReactMarkdown>{post.body}</ReactMarkdown>
+    <h1>{title}</h1>
+    <ReactMarkdown>{body}</ReactMarkdown>
   </div>
 );
 
-export const getServerSideProps = async ({ params }: Record<string, any>) => {
-  const post = await getPost(params.slug);
+export const getStaticPaths = async () => {
+  const posts = await getPosts();
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post: PostType) => ({
+    params: {
+      id: post.id,
+      slug: post.slug
+    },
+  }))
+
+  return { paths, fallback: true }
+}
+
+
+export const getStaticProps = async ({ slug }: PostType) => {
+  const post = await getPost(slug);
 
   return {
-    props: { post },
+    props: { ...post },
+    revalidate: 1,
   };
 };
 

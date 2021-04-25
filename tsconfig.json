@@ -26,17 +26,14 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@/components/*": ["src/components/*"],
-      "@/core/*": ["src/core/*"],
+      "@/components/*": ["components/*"],
       "@/api/*": ["api/*"],
     }
   },
   "exclude": [
     "node_modules",
-    "cypress"
   ],
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]
