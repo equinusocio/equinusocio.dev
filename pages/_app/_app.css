@@ -1,0 +1,31 @@
+
+html {
+  font-size: 137.5%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  color: var(--foreground-color, hsl(env(--secondary-80)));
+  background-color: var(--background-color, hsl(env(--support-white)));
+  -webkit-touch-callout: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: hsl(env(--primary-100), 0.2);
+}
+
+* {
+  margin: 0;
+
+  &:is(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+  }
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}

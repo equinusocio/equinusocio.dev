@@ -13,6 +13,31 @@ module.exports = withPlugins([
     }),
   ],
 ], {
+  webpack(conf) {
+    conf.module.rules.forEach((rule) => {
+      if (rule.oneOf) {
+        let newOneOfTheme;
+        rule.oneOf.forEach((oneof) => {
+          if (oneof.test?.toString().includes('css')) {
+            // eslint-disable-next-line no-param-reassign
+            oneof.exclude = /light\.theme\.css|dark\.theme\.css$/;
+            newOneOfTheme = {
+              test: /light\.theme\.css|dark\.theme\.css$/,
+              use: [{
+                loader: 'css-loader',
+              }, {
+                loader: 'postcss-loader',
+              }],
+            };
+          }
+        });
+        rule.oneOf.push(newOneOfTheme);
+      }
+    });
+    return conf;
+  },
+  trailingSlash: true,
+  pageExtensions: ['js', 'jsx', 'tsx'],
   future: {
     webpack5: true,
   },

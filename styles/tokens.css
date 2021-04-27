@@ -1,0 +1,21 @@
+:root {
+
+  /* Semantic Colors */
+
+  --accent-color: 234deg 90% 53%;
+  --accent-color-alt: 167deg 100% 66%;
+
+  /* Base Colors */
+
+  --color-100: 240deg 20% 4%;
+  --color-90: 208deg 14% 10%;
+  --color-80: 208deg 16% 24%;
+  --color-70: 208deg 16% 32%;
+  --color-60: 208deg 15% 40%;
+  --color-50: 208deg 15% 50%;
+  --color-40: 208deg 15% 61%;
+  --color-30: 219deg 15% 74%;
+  --color-20: 206deg 14% 90%;
+  --color-10: 180deg 8% 97%;
+  --color-0: 0deg 0% 100%;
+}

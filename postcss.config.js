@@ -10,12 +10,15 @@ module.exports = {
     'postcss-preset-env': {
       stage: 0,
       features: {
+        'logical-properties-and-values': false,
         'prefers-color-scheme-query': false,
+        'gap-properties': false,
       },
       insertAfter: {
         'custom-media-queries': require('postcss-mixins')(),
       },
     },
+    /* More info at https://github.com/jonathantneal/postcss-inset#readme */
     'postcss-inset': {},
     /* More info at https://cssnano.co/ */
     cssnano: {
