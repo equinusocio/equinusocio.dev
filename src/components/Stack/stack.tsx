@@ -49,29 +49,3 @@ export const Stack: FC<IStackProps> = ({
     </As>
   );
 };
-
-// {% macro Stack(
-//   columnGap = "1.45rem",
-//   rowGap = "1.45rem",
-//   columns = 3,
-//   inline = false,
-//   verticalAlign = "unset",
-//   horizontalAlign = "unset",
-//   class,
-//   attributes
-// ) %}
-//   <div
-//     {{ attributes }}
-//     class="Stack {{ class }}"
-//     data-stack-inline="{{ inline }}"
-//     style="
-//       --columnGap: {{ columnGap }};
-//       --rowGap: {{ rowGap }};
-//       --columns: {{ columns }};
-//       --vAlign: {{ verticalAlign }};
-//       --hAlign: {{ horizontalAlign }};
-//     "
-//   >
-//     {{ caller() }}
-//   </div>
-// {% endmacro %}

@@ -3,12 +3,6 @@
  * Default CSS definition for typescript
  */
 
-declare module 'csstype' {
-  interface Properties {
-    [index: string]: any;
-  }
-}
-
 declare module '*.svg' {
   const svgUrl: string;
   const svgComponent: React.StatelessComponent<React.SVGAttributes<SVGElement>>;

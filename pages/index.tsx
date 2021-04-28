@@ -14,7 +14,7 @@ const Home = ({ posts }: Record<string, Record<string, any>[]>) => (
 
     <Heading as="h3">Ciao</Heading>
 
-    {posts.map((item: Record<string, any>) => (
+    {posts.map((item: PostType) => (
       <Link key={item.id} href={`/blog/${encodeURIComponent(item.slug)}`}>
         <a>
           {item.title}

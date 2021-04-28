@@ -12,3 +12,9 @@ declare module '*.css' {
   export default classes;
 }
 
+declare module 'csstype' {
+  interface Properties {
+    [index: string]: any;
+  }
+}
+
