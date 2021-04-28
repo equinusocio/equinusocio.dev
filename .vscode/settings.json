@@ -2,6 +2,7 @@
   "eslint.alwaysShowStatus": true,
   "javascript.validate.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "stylelint.enable": true,
   "css.validate": false,
   "scss.validate": false,

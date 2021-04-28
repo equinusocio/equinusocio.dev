@@ -25,6 +25,7 @@
     "noUnusedParameters": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "@/components/*": ["src/components/*"],
       "@/core/*": ["src/core/*"],

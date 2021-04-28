@@ -2,21 +2,6 @@ import React from 'react';
 /**
  * Default CSS definition for typescript
  */
-declare module '*.css' {
-  const content: { [className: string]: string };
-  export default content;
-}
-
-declare module '*.module.css' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
-
-declare module 'csstype' {
-  interface Properties {
-    [index: string]: any;
-  }
-}
 
 declare module '*.svg' {
   const svgUrl: string;
