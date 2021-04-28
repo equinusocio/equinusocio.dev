@@ -7,8 +7,8 @@ declare module '*.module.css' {
   export default classes;
 }
 
-declare module 'csstype' {
-  interface Properties {
-    [index: string]: any;
-  }
+declare module '*.css' {
+  const classes: { [key: string]: string};
+  export default classes;
 }
+

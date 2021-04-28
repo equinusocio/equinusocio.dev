@@ -1,7 +1,13 @@
-import React from 'react';
+/* eslint-disable no-undef */
 /**
  * Default CSS definition for typescript
  */
+
+declare module 'csstype' {
+  interface Properties {
+    [index: string]: any;
+  }
+}
 
 declare module '*.svg' {
   const svgUrl: string;

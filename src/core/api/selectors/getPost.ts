@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { client } from '@/core/api/client';
-import { EntriesResponse } from 'types/api';
 
 export type PostType = {
   id: string;
@@ -11,6 +10,10 @@ export type PostType = {
   heroImage: Record<string, any>;
   description: string;
   body: string;
+}
+
+export type EntriesResponse = {
+  items: PostType[];
 }
 
 export async function getPost(slug: string) {
