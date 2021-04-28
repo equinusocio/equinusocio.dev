@@ -32,9 +32,9 @@
   },
   "exclude": [
     "node_modules",
-    "cypress"
   ],
   "include": [
+    "types/**/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { client } from '@/core/api/client';
+import { EntriesResponse } from 'types/api';
 
 export type PostType = {
   id: string;

@@ -4,6 +4,7 @@
     "node_modules"
   ],
   "include": [
+    "types/**/*",
     "next-env.d.ts",
     "./**/*.js",
     "./**/*.ts",
