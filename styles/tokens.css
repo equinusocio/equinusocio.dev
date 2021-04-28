@@ -4,6 +4,8 @@
 
   --accent-color: 234deg 90% 53%;
   --accent-color-alt: 167deg 100% 66%;
+  --gradient-color-1: 252 90% 53%;
+  --gradient-color-2: var(--accent-color);
 
   /* Base Colors */
 
