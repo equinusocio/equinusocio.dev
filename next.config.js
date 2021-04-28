@@ -1,8 +1,3 @@
-/*
-  eslint-disable
-  @typescript-eslint/no-var-requires,
-  global-require
-*/
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withPlugins = require('next-compose-plugins');
 
@@ -14,9 +9,9 @@ module.exports = withPlugins([
   ],
 ], {
   webpack(conf) {
+    let newOneOfTheme = {};
     conf.module.rules.forEach((rule) => {
       if (rule.oneOf) {
-        let newOneOfTheme;
         rule.oneOf.forEach((oneof) => {
           if (oneof.test?.toString().includes('css')) {
             // eslint-disable-next-line no-param-reassign
@@ -37,7 +32,6 @@ module.exports = withPlugins([
     return conf;
   },
   trailingSlash: true,
-  pageExtensions: ['js', 'jsx', 'tsx'],
   future: {
     webpack5: true,
   },

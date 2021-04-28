@@ -1,4 +1,10 @@
-import React from 'react';
+/**
+ * Default CSS definition for typescript
+ */
+declare module '*.css' {
+  const content: { [className: string]: string };
+  export default content;
+}
 
 declare module '*.module.css' {
   const classes: { [key: string]: string };
@@ -10,6 +16,7 @@ declare module 'csstype' {
     [index: string]: any;
   }
 }
+
 declare module '*.svg' {
   const svgUrl: string;
   const svgComponent: React.StatelessComponent<React.SVGAttributes<SVGElement>>;

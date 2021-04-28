@@ -3,7 +3,7 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import { Heading } from '@/components/Heading';
-import { getPosts } from '@/api/selectors';
+import { getPosts } from '@/core/api/selectors';
 import Link from 'next/link';
 
 const Home = ({ posts }: any) => (

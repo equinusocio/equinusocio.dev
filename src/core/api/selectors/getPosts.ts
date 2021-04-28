@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import { client } from '@/api/client';
+import { client } from '@/core/api/client';
 
 export async function getPosts() {
   try {

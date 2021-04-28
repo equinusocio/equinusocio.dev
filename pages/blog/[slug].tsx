@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import ReactMarkdown from 'react-markdown';
-import { getPost, getPosts } from '@/api/selectors';
-import { PostType } from '@/api/selectors/getPost';
+import { getPost, getPosts } from '@/core/api/selectors';
+import { PostType } from '@/core/api/selectors/getPost';
 
-const Post = ({title, body}: PostType) => (
+const Post = ({ title, body }: PostType) => (
   <div>
     <Meta title="Some awesome title" />
     <h1>{title}</h1>
@@ -17,13 +17,12 @@ export const getStaticPaths = async () => {
 
   const paths = posts.map((post: PostType) => ({
     params: {
-      slug: post.slug
+      slug: post.slug,
     },
-  }))
+  }));
 
-  return { paths, fallback: true }
-}
-
+  return { paths, fallback: true };
+};
 
 export const getStaticProps = async ({ params }: Record<string, any>) => {
   const post = await getPost(params.slug);
