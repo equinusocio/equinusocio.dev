@@ -8,7 +8,7 @@
   display: inline-flex;
   flex-shrink: 0;
   color: inherit;
-  color: #fff;
+  color: var(--global-foreground);
 
   &:hover {
     cursor: pointer;

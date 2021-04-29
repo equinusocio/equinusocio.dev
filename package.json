@@ -27,7 +27,7 @@
     "export": "next export -o dist",
     "start": "next start",
     "generate:icons": "yarn rimraf src/components/Icons/**/* && svgr --config-file svgr.config.js -d src/components/Icons/ src/icons",
-    "update:deps": "yarn upgrade-interactive && yarn update",
+    "update:deps": "yarn upgrade-interactive --latest && yarn upgrade",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {

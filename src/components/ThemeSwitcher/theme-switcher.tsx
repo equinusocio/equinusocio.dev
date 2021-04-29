@@ -8,10 +8,11 @@ import { Sun, MoonStars, Automatic } from '@/components/Icons';
 import style from './theme-switcher.module.css';
 
 interface IThemeSwitcherProps extends HTMLAttributes<HTMLElement> {
+  defaultTheme?: 'dark' | 'auto' | 'light';
 }
 
-export const ThemeSwitcher = ({ className, ...props }: IThemeSwitcherProps) => {
-  const [theme, setTheme] = useState<string>('light');
+export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IThemeSwitcherProps) => {
+  const [theme, setTheme] = useState<string>(defaultTheme);
 
   const handleClick = useCallback(
     () => (event: MouseEvent<HTMLOrSVGElement>) => {
