@@ -1,0 +1,15 @@
+.Section {
+  min-height: 90vh;
+
+  &[data-section-color='accent'] {
+    background-color: hsl(var(--accent-color));
+  }
+
+  &[data-section-color='accent-gradient'] {
+    background-image: radial-gradient(ellipse at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
+  }
+
+  &[data-section-color='bright'] {
+    background-color: var(--global-background);
+  }
+}

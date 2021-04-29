@@ -1,5 +1,20 @@
 @import 'media.css';
 
 .PageLayout {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.HeaderContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @media (--from-small) {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+  }
 }
