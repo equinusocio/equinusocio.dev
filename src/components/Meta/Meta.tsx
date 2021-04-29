@@ -14,11 +14,11 @@ interface IMetaProps {
 
 export const Meta = ({
   description = 'I\'m Mattia Astorino, UX Engineer in Milan and member of Open Source Design.',
-  title = '[CHANGE ME] Something Default Title',
-  siteName = 'Mattia Astorino',
-  image = 'https://equinusocio.dev/cover.jpg',
+  title = 'Mattia Astorino - UX Engineer',
+  siteName = 'Mattia Astorino - UX Engineer',
+  image = `${process.env.NEXT_PUBLIC_DOMAIN}/cover.jpg`,
   keywords,
-  url,
+  url = process.env.NEXT_PUBLIC_DOMAIN,
   canonical,
   children,
 }: IMetaProps) => (
@@ -28,6 +28,7 @@ export const Meta = ({
     { keywords && <meta name="keywords" content={keywords.join()} />}
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title={title} href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/rss`} />
 
     {canonical && <link rel="canonical" href="" /> }
     <meta property="og:site_name" content={title} />

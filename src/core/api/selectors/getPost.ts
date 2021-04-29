@@ -7,8 +7,9 @@ export type PostType = {
   tags: string[];
   title: string;
   slug: string;
-  heroImage: Record<string, any>;
-  description: string;
+  heroImage?: Record<string, any>;
+  description?: string;
+  publishDate: string;
   body: string;
 }
 
