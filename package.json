@@ -30,6 +30,7 @@
   "dependencies": {
     "clsx": "1.1.1",
     "contentful": "8.3.1",
+    "marked": "2.0.3",
     "next": "10.2.0",
     "next-compose-plugins": "2.2.1",
     "next-google-fonts": "2.2.0",
@@ -37,6 +38,7 @@
     "react-dom": "17.0.2",
     "react-markdown": "6.0.1",
     "rss": "1.2.2",
+    "sanitize-html": "2.3.3",
     "what-input": "5.2.10"
   },
   "devDependencies": {
@@ -44,9 +46,11 @@
     "@commitlint/config-conventional": "12.1.1",
     "@lasalefamine/eslint-config": "0.2.4",
     "@next/bundle-analyzer": "10.2.0",
+    "@types/marked": "2.0.2",
     "@types/node": "15.0.1",
     "@types/react": "17.0.4",
     "@types/rss": "0.0.28",
+    "@types/sanitize-html": "2.3.1",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
     "babel-plugin-module-resolver": "4.1.0",
