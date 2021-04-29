@@ -43,6 +43,7 @@ export default async function handler(_req: any, res: any) {
       link: `${process.env.NEXT_PUBLIC_DOMAIN}/blog/${slug}`,
       date: new Date(publishDate),
       content: sanitizeHtml(marked(body)),
+      image: `${process.env.NEXT_PUBLIC_DOMAIN}/cover.jpg`,
     });
   });
 
