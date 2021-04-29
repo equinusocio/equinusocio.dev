@@ -31,7 +31,7 @@ export const Meta = ({
       { keywords && <meta name="keywords" content={keywords.join()} />}
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="apple-touch-icon" href="/favicon.png" />
-      <link rel="alternate" type="application/rss+xml" title={title} href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/rss`} />
+      <link rel="alternate" type="application/rss+xml" title={title} href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/feed`} />
 
       {canonical && <link rel="canonical" href={canonical} /> }
       <meta property="og:site_name" content={title} />

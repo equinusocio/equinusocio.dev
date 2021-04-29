@@ -3,6 +3,7 @@
  * Default CSS definition for typescript
  */
 
+declare module '@components/Icons'
 declare module '*.svg' {
   const svgUrl: string;
   const svgComponent: React.StatelessComponent<React.SVGAttributes<SVGElement>>;

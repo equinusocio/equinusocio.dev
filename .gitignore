@@ -5,6 +5,7 @@ node_modules
 .cache
 .env.local
 .env*
+src/components/Icons
 
 # Created by https://www.gitignore.io/api/linux,macos,windows,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=linux,macos,windows,visualstudiocode

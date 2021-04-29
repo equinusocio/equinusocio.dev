@@ -28,14 +28,14 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "@/components/*": ["src/components/*"],
-      "@/core/*": ["src/core/*"],
+      "@/core/*": ["src/core/*"]
     }
   },
   "exclude": [
     "node_modules",
   ],
   "include": [
-    "types/**/*",
+    "types/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

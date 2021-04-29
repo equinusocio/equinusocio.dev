@@ -1,0 +1,86 @@
+.ThemeSwitcher {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 72px;
+  padding: 2px;
+  margin: 0;
+  background-color: var(--theme-switcher-background, hsl(env(--secondary-50)));
+  border-radius: 100px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Thumb {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--background-color, hsl(env(--support-white)));
+  transition:
+    background-color env(--time-300-ms) linear,
+    transform env(--time-300-ms) env(--ease-standard-css);
+
+  @nest [data-theme='auto'] & {
+    transform: translateX(24px);
+  }
+  @nest [data-theme='dark'] & {
+    transform: translateX(48px);
+    background-color: hsl(env(--secondary-100));
+  }
+}
+
+.Button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: color env(--time-100-ms) linear;
+  transition-delay: env(--time-250-ms);
+
+  & > input {
+    appearance: none;
+    border: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  & > svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  & + .Button {
+    margin-left: 4px;
+  }
+
+  @nest [data-theme='auto'] &[data-theme-switcher-auto] {
+    color: var(--foreground-color, hsl(env(--secondary-90)));
+  }
+  @nest [data-theme='light'] &[data-theme-switcher-light] {
+    color: hsl(env(--accent-100));
+    animation: clip-icon env(--time-300-ms) 1 env(--ease-exit-css);
+  }
+  @nest [data-theme='dark'] &[data-theme-switcher-dark] {
+    color: hsl(env(--support-cyan-light));
+    animation: clip-icon env(--time-300-ms) 1 env(--ease-exit-css);
+  }
+}
+
+
+@keyframes clip-icon {
+  from {
+    clip-path: circle(0 at 50% 50%);
+  }
+
+  to {
+    clip-path: circle(50% at 50% 50%);
+  }
+}

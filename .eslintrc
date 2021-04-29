@@ -9,6 +9,6 @@
     "project": "./tsconfig.eslint.json"
   },
   "rules": {
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
   }
 }

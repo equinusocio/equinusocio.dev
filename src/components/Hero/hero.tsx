@@ -2,6 +2,6 @@ import React from 'react';
 
 export const Hero = () => (
   <section>
-    A
+    Props
   </section>
 );
