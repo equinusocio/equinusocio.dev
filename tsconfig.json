@@ -28,6 +28,7 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "@/components/*": ["src/components/*"],
+      "@/styles/*": ["src/styles/*"],
       "@/core/*": ["src/core/*"]
     }
   },

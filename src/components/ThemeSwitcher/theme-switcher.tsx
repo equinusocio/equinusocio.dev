@@ -2,7 +2,6 @@ import React, {
   HTMLAttributes, MouseEvent, useCallback, useEffect, useState,
 } from 'react';
 import { BlankButton } from '@/components/BlankButton';
-import { Stack } from '@/components/Stack';
 import clsx from 'clsx';
 import { Sun, MoonStars, Automatic } from '@/components/Icons';
 import style from './theme-switcher.module.css';
@@ -34,9 +33,7 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
   }, [theme]);
 
   return (
-    <Stack
-      inline
-      columnGap="0.36rem"
+    <div
       className={clsx(style.ThemeSwitcher, className)}
       {...props}
     >
@@ -66,6 +63,6 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
       >
         <MoonStars aria-hidden="true" role="presentation" />
       </BlankButton>
-    </Stack>
+    </div>
   );
 };

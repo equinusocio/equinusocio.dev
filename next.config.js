@@ -5,6 +5,7 @@
 */
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withPlugins = require('next-compose-plugins');
+const path = require('path');
 
 module.exports = withPlugins([
   [

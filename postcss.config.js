@@ -5,6 +5,7 @@ module.exports = {
     /* More info at https://github.com/TrySound/postcss-easy-import */
     'postcss-easy-import': {
       extensions: '.css',
+      path: ['src/styles'],
     },
     /* https://github.com/postcss/postcss-dark-theme-class */
     'postcss-dark-theme-class': {

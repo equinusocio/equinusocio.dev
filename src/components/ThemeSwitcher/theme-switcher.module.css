@@ -1,5 +1,6 @@
 .ThemeSwitcher {
   display: flex;
+  gap: 0.36rem;
 }
 
 .Action {
@@ -15,13 +16,13 @@
   }
 
   @nest html[data-theme='light'] &[data-theme-name='light'] {
-    color: hsl(var(--accent-color));
+    color: hsl(var(--accent-color-alt));
   }
   @nest html[data-theme='dark'] &[data-theme-name='dark'] {
-    color: hsl(var(--accent-color));
+    color: hsl(var(--accent-color-alt));
   }
   @nest html[data-theme='auto'] &[data-theme-name='auto'] {
-    color: hsl(var(--accent-color));
+    color: hsl(var(--accent-color-alt));
   }
 
   & svg {

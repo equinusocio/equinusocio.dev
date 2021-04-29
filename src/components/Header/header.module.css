@@ -1,4 +1,8 @@
 .Header {
   position: sticky;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.02rem;
+  align-items: center;
   top: 0;
 }
