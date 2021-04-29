@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-background: hsl(var(--color-100));
+    --global-foreground: hsl(var(--color-10));
+  }
+}

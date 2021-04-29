@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, useCallback } from 'react';
 import { Sun, Moon, Automatic } from '@components/Icons';
-import style from './theme-switcher.module.css';
+import style from './theme-switcher-alt.module.css';
 import { ThemeType } from './ThemeProvider';
 import { useThemeContext } from './useThemeContext';
 

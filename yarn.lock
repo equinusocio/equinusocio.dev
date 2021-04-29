@@ -5230,6 +5230,11 @@ postcss-custom-selectors@^5.1.2:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
+postcss-dark-theme-class@0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/postcss-dark-theme-class/-/postcss-dark-theme-class-0.5.1.tgz#2d01c045598ce29745aa6619f1761db00bdfbd10"
+  integrity sha512-DNHSZeBOXzQZP99VC1An8iJVIoi6D3I2hIXzD6gPZhxph3XIVBwqoqxQdHddd5liq2sARkfxgZ5ngIPr7dSQDA==
+
 postcss-dir-pseudo-class@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/postcss-dir-pseudo-class/-/postcss-dir-pseudo-class-5.0.0.tgz#6e3a4177d0edb3abcc85fdb6fbb1c26dabaeaba2"

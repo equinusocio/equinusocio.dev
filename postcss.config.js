@@ -6,6 +6,11 @@ module.exports = {
     'postcss-easy-import': {
       extensions: '.css',
     },
+    /* https://github.com/postcss/postcss-dark-theme-class */
+    'postcss-dark-theme-class': {
+      darkSelector: '[data-theme="dark"]',
+      lightSelector: '[data-theme="light"]',
+    },
     /* More info at https://github.com/csstools/postcss-preset-env */
     'postcss-preset-env': {
       stage: 0,

@@ -2,17 +2,17 @@
 
 import React from 'react';
 import { Meta } from '@/components/Meta';
-import { Heading } from '@/components/Heading';
 import { getPosts } from '@/core/api/selectors';
 import Link from 'next/link';
 import { PostType } from '@/core/api/selectors/getPost';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 const Home = ({ posts }: Record<string, Record<string, any>[]>) => (
   <div>
     <Meta title="Some awesome title" />
     <div>Blog</div>
 
-    <Heading as="h3">Ciao</Heading>
+    <ThemeSwitcher />
 
     {posts.map((item: PostType) => (
       <Link key={item.id} href={`/blog/${encodeURIComponent(item.slug)}`}>
