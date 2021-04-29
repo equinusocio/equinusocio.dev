@@ -3,6 +3,7 @@ import { Meta } from '@/components/Meta';
 import ReactMarkdown from 'react-markdown';
 import { getPost, getPosts } from '@/core/api/selectors';
 import { PostType } from '@/core/api/selectors/getPost';
+import { Params } from 'next/dist/next-server/server/router';
 
 const Post = ({ title, body }: PostType) => (
   <div>
@@ -24,12 +25,12 @@ export const getStaticPaths = async () => {
   return { paths, fallback: true };
 };
 
-export const getStaticProps = async ({ params }: Record<string, any>) => {
+export const getStaticProps = async ({ params }: Params) => {
   const post = await getPost(params.slug);
 
   return {
     props: { ...post },
-    revalidate: 1,
+    revalidate: 120,
   };
 };
 
