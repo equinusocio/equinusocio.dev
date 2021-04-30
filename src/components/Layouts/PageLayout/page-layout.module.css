@@ -1,5 +1,3 @@
-@import 'media.css';
-
 .PageLayout {
   display: grid;
   grid-template-columns: 1fr;

@@ -1,5 +1,3 @@
-@import 'media.css';
-
 .Stack {
   display: grid;
   grid-gap: var(--rowGap) var(--columnGap);

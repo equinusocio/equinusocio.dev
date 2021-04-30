@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   gap: 6.36rem;
+
+  @media (--from-small) {
+    background-color: red;
+  }
 }
 
 
@@ -41,8 +45,6 @@
   .Image {
     opacity: 0.2;
     z-index: 2;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
