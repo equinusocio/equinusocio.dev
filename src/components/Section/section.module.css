@@ -1,15 +1,25 @@
+@import 'media.css';
+
 .Section {
-  min-height: 90vh;
+  min-height: 95vh;
+
+  @media (--from-medium) {
+    &[data-section-show-bg='true'] {
+      background-position: center center;
+      background-attachment: fixed;
+      background-image: var(--bg);
+    }
+  }
 
   &[data-section-color='accent'] {
     background-color: hsl(var(--accent-color));
   }
 
-  &[data-section-color='accent-gradient'] {
-    background-image: radial-gradient(ellipse at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
-  }
-
   &[data-section-color='bright'] {
     background-color: var(--global-background);
+  }
+
+  &[data-section-color='dark'] {
+    background-color: hsl(var(--color-100));
   }
 }

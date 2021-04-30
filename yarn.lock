@@ -6327,6 +6327,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rooks@4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/rooks/-/rooks-4.11.0.tgz#69716e5ff9f8b40da6df59221f6fa3f2b2808d3c"
+  integrity sha512-Vq/YrkBJUiZtmZtjSZ8KGgJ/E9JaXKx+YC/bOkDG2aHhjvsC3spdlnt0xDI+oVJmFiNHqG+N383qnZnH5FOSlQ==
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"

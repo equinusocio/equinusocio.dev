@@ -5,19 +5,19 @@ import style from './section.module.css';
 interface ISectionProps extends HTMLAttributes<HTMLElement> {
   showBg?: boolean;
   bg?: string;
-  color?: 'accent' | 'accent-gradient' | 'bright' | 'dark';
+  color?: 'accent' | 'bright' | 'dark';
 }
 
 export const Section = ({
   children,
   showBg = true,
   className,
-  color = 'accent-gradient',
+  color = 'accent',
   bg,
   ...props
 }: ISectionProps) => {
   const dynamicStyle: CSSProperties = {
-    '--bg': bg,
+    '--bg': (showBg && bg) && `url(/${bg})`,
   };
 
   return (

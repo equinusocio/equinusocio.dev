@@ -7,6 +7,15 @@
 
     display: block;
     font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+
+    &[data-heading-line-height='none'] {
+      line-height: 0.3;
+    }
+
+    &[data-heading-line-height='small'] {
+      line-height: 1;
+    }
 
     @media (width <= 48em) {
       --headingBaseSize: 0.72rem;
@@ -14,14 +23,12 @@
   }
 
   &:is(h6, .H6) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size: var(--headingBaseSize);
   }
 
   &:is(h5, .H5) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:
@@ -31,7 +38,6 @@
   }
 
   &:is(h4, .H4) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:
@@ -41,7 +47,6 @@
   }
 
   &:is(h3, .H3) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:
@@ -52,7 +57,6 @@
   }
 
   &:is(h2, .H2) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:
@@ -63,7 +67,6 @@
   }
 
   &:is(.H1, h1) {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:
@@ -74,7 +77,6 @@
   }
 
   &.Display {
-    line-height: 1.2;
     font-weight: 900;
     min-height: 0.01vh;
     font-size:

@@ -9,6 +9,7 @@ interface IHeadingProps extends HTMLAttributes<HTMLOrSVGElement> {
   as?: keyof JSX.IntrinsicElements;
   semantic?: boolean;
   display?: boolean;
+  lineHeignt?: 'none' | 'small' | 'large';
   align?: 'start' | 'center' | 'end';
 }
 
@@ -18,6 +19,7 @@ export const Heading: FC<IHeadingProps> = ({
   children,
   display,
   align,
+  lineHeignt,
   className,
   ...props
 }: IHeadingProps) => {
@@ -27,9 +29,10 @@ export const Heading: FC<IHeadingProps> = ({
 
   const cssClasses = useMemo(
     () => ({
+      'data-heading-line-height': lineHeignt,
       className: clsx(style.Heading, style[computedClassName], display && style.Display, className),
     }),
-    [className, computedClassName, display],
+    [className, computedClassName, display, lineHeignt],
   );
 
   return semantic ? (

@@ -1,3 +1,51 @@
 .Hero {
+  --foreground: hsl(var(--color-0));
+
+  height: 100%;
+  color: var(--foreground);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6.36rem;
+}
+
+
+.Photo {
   position: relative;
+  display: inline-flex;
+  border-radius: 4.54rem 1.09rem 1.09rem 1.09rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: hsl(100deg 0% 0% / 0%);
+    inset: 0;
+    display: block;
+    backdrop-filter: blur(10px);
+  }
+
+  & .Image {
+    mix-blend-mode: overlay;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@-moz-document url-prefix() {
+  .Photo::before {
+    z-index: 0;
+  }
+
+  .Image {
+    opacity: 0.2;
+    z-index: 2;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.Title {
+  text-align: right;
 }
