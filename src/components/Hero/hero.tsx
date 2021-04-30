@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from '@/components/Container';
+import { Heading } from '@/components/Heading';
+import { Stack } from '@/components/Stack';
 import style from './hero.module.css';
-import { Heading } from '../Heading';
 
 export const Hero = () => (
   <Container className={style.Hero}>
@@ -16,14 +17,12 @@ export const Hero = () => (
       />
     </picture>
 
-    <div>
-      <Heading as="h1" lineHeignt="none" className={style.Title}>
+    <Stack column>
+      <Heading as="h1" lineHeignt="small" className={style.Title}>
         Hi, my name is
-        <br aria-hidden="true" />
-        {' '}
         <Heading display semantic={false}>Mattia</Heading>
       </Heading>
       <p>ciao</p>
-    </div>
+    </Stack>
   </Container>
 );

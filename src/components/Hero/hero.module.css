@@ -8,10 +8,6 @@
   justify-content: center;
   align-items: center;
   gap: 6.36rem;
-
-  @media (--from-small) {
-    background-color: red;
-  }
 }
 
 
@@ -24,16 +20,17 @@
   &::before {
     content: '';
     position: absolute;
-    background-color: hsl(100deg 0% 0% / 0%);
     inset: 0;
     display: block;
     backdrop-filter: blur(10px);
+    border-radius: inherit;
   }
 
   & .Image {
     mix-blend-mode: overlay;
     object-fit: cover;
     object-position: center;
+    border-radius: inherit;
   }
 }
 
@@ -48,6 +45,8 @@
   }
 }
 
+
 .Title {
-  text-align: right;
+  text-align: end;
 }
+

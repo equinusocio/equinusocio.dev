@@ -10,7 +10,7 @@
   }
 
   &[data-section-color='accent'] {
-    background-color: hsl(var(--accent-color));
+    background-image: var(--bg), radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
   }
 
   &[data-section-color='bright'] {

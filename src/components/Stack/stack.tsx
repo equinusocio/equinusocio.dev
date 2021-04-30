@@ -10,20 +10,18 @@ interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
   as?: keyof JSX.IntrinsicElements;
   columnGap?: string;
   rowGap?: string;
-  columns?: number;
-  inline?: boolean;
   verticalAlign?: 'unset' | 'start' | 'center' | 'end';
   horizontalAlign?: 'unset' | 'start' | 'center' | 'end';
+  column?: boolean;
 }
 
 export const Stack: FC<IStackProps> = ({
   as = 'div',
   columnGap = '1.45rem',
   rowGap = '1.45rem',
-  columns = 1,
-  inline = false,
   verticalAlign = 'unset',
   horizontalAlign = 'unset',
+  column,
   className,
   children,
   ...props
@@ -33,16 +31,15 @@ export const Stack: FC<IStackProps> = ({
   const dynamicStyle: CSSProperties = useMemo(() => ({
     '--columnGap': columnGap,
     '--rowGap': rowGap,
-    '--columns': columns,
     '--vAlign': verticalAlign,
     '--hAlign': horizontalAlign,
-  }), [columnGap, rowGap, columns, verticalAlign, horizontalAlign]);
+  }), [columnGap, rowGap, verticalAlign, horizontalAlign]);
 
   return (
     <As
       style={dynamicStyle}
+      data-stack-column={column}
       className={clsx(style.Stack, className)}
-      data-stack-inline={inline}
       {...props}
     >
       {children}
