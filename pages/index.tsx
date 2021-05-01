@@ -3,12 +3,16 @@
 import { Hero } from '@/components/Hero';
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Section } from '@/components/Section';
+import { Header } from '@/components/Header';
 import React from 'react';
 
 const Home = () => (
-  <PageLayout>
-    <Section bg="bg-1.svg">
-      <Hero />
+  <PageLayout showHeader={false}>
+    <Section bg="bg-1.svg" isFirst>
+      <div>
+        <Header />
+        <Hero />
+      </div>
     </Section>
     <Section color="dark" bg="bg-2.svg">
       B

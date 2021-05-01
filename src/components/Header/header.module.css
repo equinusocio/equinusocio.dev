@@ -1,6 +1,17 @@
 .Header {
+  --global-foreground: hsl(var(--color-0));
+
   display: flex;
   justify-content: flex-end;
   padding: 1.02rem;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @media (--from-small) {
+    position: relative;
+    inset: unset;
+  }
 }

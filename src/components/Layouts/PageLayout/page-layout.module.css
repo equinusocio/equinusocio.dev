@@ -1,20 +1,3 @@
 .PageLayout {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.HeaderContainer {
-  --global-foreground: hsl(var(--color-0));
-
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  @media (--from-small) {
-    top: 0;
-    bottom: auto;
-    left: 0;
-    right: 0;
-  }
+  position: relative;
 }

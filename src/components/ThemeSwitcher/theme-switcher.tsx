@@ -4,6 +4,7 @@ import React, {
 import { BlankButton } from '@/components/BlankButton';
 import clsx from 'clsx';
 import { Sun, MoonStars, Automatic } from '@/components/Icons';
+import { Stack } from '@/components/Stack';
 import style from './theme-switcher.module.css';
 
 interface IThemeSwitcherProps extends HTMLAttributes<HTMLElement> {
@@ -33,8 +34,9 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
   }, [theme]);
 
   return (
-    <div
-      className={clsx(style.ThemeSwitcher, className)}
+    <Stack
+      className={clsx(className)}
+      columnGap="1.09rem"
       {...props}
     >
       <BlankButton
@@ -63,6 +65,6 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
       >
         <MoonStars aria-hidden="true" role="presentation" />
       </BlankButton>
-    </div>
+    </Stack>
   );
 };

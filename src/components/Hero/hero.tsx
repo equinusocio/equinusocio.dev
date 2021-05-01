@@ -18,11 +18,18 @@ export const Hero = () => (
     </picture>
 
     <Stack column>
-      <Heading as="h1" lineHeignt="small" className={style.Title}>
+      <Heading as="h1" className={style.Title}>
         Hi, my name is
-        <Heading display semantic={false}>Mattia</Heading>
+        <br aria-hidden="true" />
+        <img className={style.Name} draggable="false" src="/mattia.svg" alt="Mattia" />
       </Heading>
-      <p>ciao</p>
+      <p>
+        As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.
+        I don’t work with CSS frameworks, I build them.
+      </p>
+      <p>
+        I’m also an open-source developer, and in my spare time I do photography and digital art.
+      </p>
     </Stack>
   </Container>
 );
