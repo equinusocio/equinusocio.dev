@@ -4,6 +4,7 @@
   & svg {
     width: 24px;
     height: 24px;
+    fill: hsl(var(--color-0));
     transition: transform 200ms;
     pointer-events: none;
   }
@@ -15,7 +16,7 @@
 
 .Socials a:hover svg,
 .Socials a:focus svg {
-  fill: hsl(var(--accent-color));
+  fill: hsl(var(--accent-color-alt));
 }
 
 .List {

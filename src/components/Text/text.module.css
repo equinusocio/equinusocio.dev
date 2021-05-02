@@ -5,7 +5,7 @@
   font-style: normal;
 
   &[data-text-size='small'] {
-    font-size: max(0.8rem, min(5vw, 0.88rem));
+    font-size: 0.72rem;
   }
 
   &[data-text-weight='thin'] {

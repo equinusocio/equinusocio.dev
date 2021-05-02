@@ -5,7 +5,7 @@ import style from './socials.module.css';
 
 export const Socials = () => (
   <Stack column horizontalAlign="start" rowGap="0.36rem" as="address" className={style.Socials}>
-    <Text size="small">But there is more...</Text>
+    <Text size="small"><b>But there is more...</b></Text>
     <ul className={style.List}>
       <li>
         <a data-audio-name="click-2" href="https://twitter.com/equinusocio" rel="noopener noreferrer" target="_blank" aria-label="Mattia Astorino on Twitter">

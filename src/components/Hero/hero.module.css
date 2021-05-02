@@ -1,3 +1,4 @@
+@import 'media.css';
 
 .Hero {
   --foreground: hsl(var(--color-0));
