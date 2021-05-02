@@ -2,11 +2,10 @@
   margin: 1rem 0;
 
   & svg {
-    width: 24px;
-    height: 24px;
     fill: hsl(var(--color-0));
     transition: transform 200ms;
     pointer-events: none;
+    display: block;
   }
 
   & a {
