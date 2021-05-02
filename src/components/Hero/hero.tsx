@@ -15,6 +15,7 @@ export const Hero = () => (
         alt="Mattia Astorino"
         width="529"
         height="696"
+        decoding="async"
       />
     </picture>
 
