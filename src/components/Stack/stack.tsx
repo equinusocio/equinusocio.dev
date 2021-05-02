@@ -13,6 +13,7 @@ interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
   verticalAlign?: 'unset' | 'start' | 'center' | 'end';
   horizontalAlign?: 'unset' | 'start' | 'center' | 'end';
   column?: boolean;
+  wrap?: boolean;
 }
 
 export const Stack: FC<IStackProps> = ({
@@ -23,6 +24,7 @@ export const Stack: FC<IStackProps> = ({
   horizontalAlign = 'unset',
   column,
   className,
+  wrap = true,
   children,
   ...props
 }: IStackProps) => {
@@ -39,6 +41,7 @@ export const Stack: FC<IStackProps> = ({
     <As
       style={dynamicStyle}
       data-stack-column={column}
+      data-stack-wrap={wrap}
       className={clsx(style.Stack, className)}
       {...props}
     >

@@ -7,6 +7,8 @@ module.exports = {
       extensions: '.css',
       path: ['src/styles'],
     },
+    /* https://github.com/limitlessloop/postcss-help-media-queries */
+    'postcss-help-media-queries': {},
     /* https://github.com/postcss/postcss-dark-theme-class */
     'postcss-dark-theme-class': {
       darkSelector: '[data-theme="dark"]',

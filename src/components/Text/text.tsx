@@ -8,8 +8,8 @@ interface ITextProps extends HTMLAttributes<HTMLOrSVGElement> {
   // eslint-disable-next-line no-undef
   as?: keyof JSX.IntrinsicElements;
   size?: 'small';
-  color: string;
-  weight: 'thin' | 'medium' | 'bold';
+  color?: string;
+  weight?: 'thin' | 'medium' | 'bold';
 }
 
 export const Text: FC<ITextProps> = ({
@@ -24,11 +24,17 @@ export const Text: FC<ITextProps> = ({
   const As = as;
 
   const dynamicStyle: CSSProperties = {
-    '--fw': weight,
+    '--color': color,
   };
 
   return (
-    <As style={dynamicStyle} data-text-weight={weight} className={clsx(style.Text, className)} {...props}>
+    <As
+      style={dynamicStyle}
+      data-text-size={size}
+      data-text-weight={weight}
+      className={clsx(style.Text, className)}
+      {...props}
+    >
       {children}
     </As>
   );

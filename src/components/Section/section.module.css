@@ -21,7 +21,10 @@
   }
 
   &[data-section-is-first='true'] {
-    padding-top: 0;
+
+    @media (--from-small) {
+      padding-top: 0;
+    }
   }
 
   &[data-section-color='accent'] {

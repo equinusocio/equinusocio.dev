@@ -1,3 +1,6 @@
+@import 'media.css';
+@help-media-queries;
+
 html {
   font-size: 137.5%;
   -moz-osx-font-smoothing: grayscale;

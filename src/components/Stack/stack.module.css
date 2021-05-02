@@ -3,7 +3,10 @@
   gap: var(--rowGap) var(--columnGap);
   align-items: var(--vAlign);
   justify-content: var(--hAlign);
-  flex-wrap: wrap;
+
+  &[data-stack-wrap='true'] {
+    flex-wrap: wrap;
+  }
 
   &[data-stack-column='true'] {
     flex-direction: column;

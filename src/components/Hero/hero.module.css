@@ -1,11 +1,18 @@
+
 .Hero {
   --foreground: hsl(var(--color-0));
 
   color: var(--foreground);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.09rem clamp(1.45rem, 10vw, 6.36rem);
-  justify-content: center;
+  gap: 1.09rem clamp(1.45rem, 10vw, 4.36rem);
+
+  @media (--from-medium) {
+    flex-wrap: nowrap;
+  }
+  @media (--from-large) {
+    justify-content: flex-end;
+  }
 
   & > *:nth-child(1) {
     flex-grow: 1;
@@ -14,7 +21,7 @@
   & > *:nth-child(2) {
     flex-grow: 1;
 
-    @media (--from-medium) {
+    @media (--from-large) {
       max-width: 580px;
       flex-basis: 40%;
     }
@@ -28,14 +35,23 @@
   border-radius: 4.54rem 1.09rem 1.09rem 1.09rem;
   overflow: hidden;
   justify-content: center;
-  max-width: 24.1rem;
+  max-width: 18rem;
+  min-width: 13.6rem;
+  max-height: 60vh;
+
+  @media (--from-medium) {
+    max-height: unset;
+  }
+  @media (--from-large) {
+    max-width: 24.1rem;
+  }
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     display: block;
-    backdrop-filter: blur(10px) brightness(1.3);
+    backdrop-filter: blur(10px);
     border-radius: inherit;
   }
 }
@@ -43,6 +59,7 @@
 .Image {
   mix-blend-mode: overlay;
   border-radius: inherit;
+  height: 100%;
 }
 
 @-moz-document url-prefix() {
@@ -60,17 +77,21 @@
 .Title {
   text-align: start;
   transform: translateZ(0);
+  margin-top: -9.09rem;
 
   @media (--from-medium) {
-    white-space: nowrap;
-    transform: translateX(-45%);
+    margin-top: unset;
+    transform: translateZ(0) translateX(-45%);
+  }
+  @media (--from-extraLarge) {
     text-align: end;
+    white-space: nowrap;
   }
 
   & br {
     display: none;
 
-    @media (--from-medium) {
+    @media (--from-extraLarge) {
       display: unset;
     }
   }

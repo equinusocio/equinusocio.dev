@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Stack } from '@/components/Stack';
+import { Socials } from '@/components/Socials';
 import style from './hero.module.css';
 
 export const Hero = () => (
@@ -20,6 +21,8 @@ export const Hero = () => (
     <Stack column>
       <Heading as="h1" className={style.Title}>
         Hi, my name is
+        {' '}
+        {' '}
         <br aria-hidden="true" />
         <img className={style.Name} draggable="false" src="/mattia.svg" alt="Mattia" />
       </Heading>
@@ -37,6 +40,7 @@ export const Hero = () => (
         <strong>open-source developer</strong>
         , and in my spare time I do photography and digital art.
       </p>
+      <Socials />
     </Stack>
   </Container>
 );
