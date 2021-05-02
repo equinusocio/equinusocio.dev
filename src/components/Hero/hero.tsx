@@ -24,11 +24,18 @@ export const Hero = () => (
         <img className={style.Name} draggable="false" src="/mattia.svg" alt="Mattia" />
       </Heading>
       <p>
-        As UX Engineer I build web interfaces, components library and design systems with a special love to CSS.
+        As
+        {' '}
+        <strong>UX Engineer</strong>
+        {' '}
+        I build web interfaces, components library and design systems with a special love to CSS.
         I don’t work with CSS frameworks, I build them.
       </p>
       <p>
-        I’m also an open-source developer, and in my spare time I do photography and digital art.
+        I’m also an
+        {' '}
+        <strong>open-source developer</strong>
+        , and in my spare time I do photography and digital art.
       </p>
     </Stack>
   </Container>

@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import { Header } from '@/components/Header';
+import { Cursor } from '@/components/Cursor';
 import style from './page-layout.module.css';
 
 interface IPageLayoutProps extends HTMLAttributes<HTMLElement>{
@@ -12,7 +13,8 @@ export const PageLayout = ({
   ...props
 }: IPageLayoutProps) => (
   <main className={style.PageLayout} {...props}>
-    {showHeader && <Header className={style.HeaderContainer} />}
+    <Cursor />
+    {showHeader && <Header />}
     {children}
   </main>
 );

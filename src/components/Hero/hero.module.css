@@ -15,7 +15,7 @@
     flex-grow: 1;
 
     @media (--from-medium) {
-      max-width: 650px;
+      max-width: 580px;
       flex-basis: 40%;
     }
   }
@@ -35,14 +35,14 @@
     position: absolute;
     inset: 0;
     display: block;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) brightness(1.3);
     border-radius: inherit;
   }
+}
 
-  & .Image {
-    mix-blend-mode: overlay;
-    border-radius: inherit;
-  }
+.Image {
+  mix-blend-mode: overlay;
+  border-radius: inherit;
 }
 
 @-moz-document url-prefix() {
@@ -59,10 +59,11 @@
 
 .Title {
   text-align: start;
+  transform: translateZ(0);
 
   @media (--from-medium) {
     white-space: nowrap;
-    translate: -45%;
+    transform: translateX(-45%);
     text-align: end;
   }
 
