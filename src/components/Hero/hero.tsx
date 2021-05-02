@@ -25,7 +25,7 @@ export const Hero = () => (
         {' '}
         {' '}
         <br aria-hidden="true" />
-        <img className={style.Name} draggable="false" src="/mattia.svg" alt="Mattia" />
+        <img className={style.Name} src="/mattia.svg" alt="Mattia" />
       </Heading>
       <p>
         As
