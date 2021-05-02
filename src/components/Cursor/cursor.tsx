@@ -1,10 +1,12 @@
-import { TweenLite } from 'gsap';
+import gsap, { TweenLite, CSSPlugin } from 'gsap';
 import React, {
   Fragment,
   useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import style from './cursor.module.css';
+
+gsap.registerPlugin(CSSPlugin);
 
 export const Cursor = () => {
   const bigBallRef = useRef(null);
