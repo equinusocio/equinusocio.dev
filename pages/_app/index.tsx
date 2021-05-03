@@ -4,6 +4,7 @@ import './_app.css';
 import '@/styles/tokens.css';
 import '@/styles/light.css';
 import '@/styles/dark.css';
+import { Meta } from '@/components/Meta';
 
 // export function reportWebVitals(metric: any) {
 //   // These metrics can be sent to any analytics service
@@ -11,7 +12,10 @@ import '@/styles/dark.css';
 // }
 
 const App = ({ Component, pageProps }: any) => (
-  <Component {...pageProps} />
+  <>
+    <Meta />
+    <Component {...pageProps} />
+  </>
 );
 
 export default App;

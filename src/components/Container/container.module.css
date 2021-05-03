@@ -5,28 +5,21 @@
   margin: 0 auto;
   width: 100%;
 
+  @media (--from-small) {
+    padding-left: max(1.45rem, env(safe-area-inset-left));
+    padding-right: max(1.45rem, env(safe-area-inset-right));
+  }
+
   &[data-container-size='medium'] {
     max-width: 36.36rem;
-
-    @media (--from-small) {
-      padding: 0 1.45rem;
-    }
   }
 
   &[data-container-size='large'] {
     max-width: 63.63rem;
-
-    @media (--from-small) {
-      padding: 0 1.45rem;
-    }
   }
 
   &[data-container-size='full'] {
     max-width: 100%;
-
-    @media (--from-small) {
-      padding: 0 1.45rem;
-    }
   }
 
   &[data-container-padding='false'] {

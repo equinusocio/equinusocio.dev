@@ -27,10 +27,10 @@ export const Meta = ({
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" />
     <Head>
       <title>{title}</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
       { keywords && <meta name="keywords" content={keywords.join()} />}
-      <link rel="icon" type="image/png" href="/favicon.png" />
-      <link rel="apple-touch-icon" href="/favicon.png" />
+      <link rel="icon" href="favicon.svg" />
+      <link rel="apple-touch-icon" href="touch-icon.png" />
       <link rel="alternate" type="application/rss+xml" title={title} href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/feed`} />
 
       {canonical && <link rel="canonical" href={canonical} /> }

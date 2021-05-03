@@ -4,8 +4,12 @@
   --global-foreground: hsl(var(--color-0));
 
   display: flex;
-  justify-content: flex-end;
-  padding: 1.02rem;
+  justify-content: space-between;
+  padding:
+    max(1.02rem, env(safe-area-inset-top))
+    max(1.02rem, env(safe-area-inset-right))
+    max(1.02rem, env(safe-area-inset-bottom))
+    max(1.02rem, env(safe-area-inset-left));
   gap: 1.45rem;
   align-items: center;
   position: fixed;
@@ -14,8 +18,13 @@
   right: 0;
   z-index: 1;
   color: var(--global-foreground);
+  background-color: hsl(var(--color-100) / 60%);
+  backdrop-filter: blur(20px);
 
   @media (--from-small) {
+    background: none;
+    backdrop-filter: none;
+    justify-content: flex-end;
     position: relative;
     inset: unset;
   }
@@ -25,6 +34,10 @@
     display: inline-block;
     text-decoration: none;
     line-height: 1;
+
+    &[aria-current='page'] {
+      color: hsl(var(--accent-color-alt));
+    }
   }
 }
 

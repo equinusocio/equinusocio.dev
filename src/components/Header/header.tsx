@@ -15,7 +15,6 @@ export const Header = ({
 
   return (
     <header className={clsx(style.Header, className)} {...props}>
-      {router.asPath}
       <Stack as="nav" columnGap="1.22rem">
         <Link href="/">
           <a aria-current={router.asPath === '/' ? 'page' : undefined}><Text as="span" size="small" weight="bold">HOME</Text></a>
