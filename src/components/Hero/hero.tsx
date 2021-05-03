@@ -8,7 +8,11 @@ import style from './hero.module.css';
 
 export const Hero = () => (
   <Container className={style.Hero}>
-    <Text size="small" className={style.SideText}>EQUINUSOCIO — FOR — FRIENDS</Text>
+    <Text size="small" className={style.SideText}>
+      <Text as="span" color="hsl(var(--accent-color-alt))">EQUINUSOCIO</Text>
+      {' '}
+      — FOR — FRIENDS
+    </Text>
     <picture className={style.Photo}>
       <source srcSet="/mattia_astorino.webp" type="image/webp" />
       <img

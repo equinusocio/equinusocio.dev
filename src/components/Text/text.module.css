@@ -1,6 +1,6 @@
 .Text {
   line-height: 1.5;
-  font-size: max(0.8rem, min(5vw, 1rem));
+  font-size: inherit;
   color: var(--color, inherit);
   font-style: normal;
 
