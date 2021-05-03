@@ -6,15 +6,35 @@
   display: flex;
   justify-content: flex-end;
   padding: 1.02rem;
+  gap: 1.45rem;
   align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
+  color: var(--global-foreground);
 
   @media (--from-small) {
     position: relative;
     inset: unset;
+  }
+
+  & a {
+    color: hsl(var(--color-0));
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+  }
+}
+
+.Separator {
+  height: 1px;
+  background-color: hsl(var(--color-0));
+  min-width: 2.9rem;
+  display: none;
+
+  @media (--from-small) {
+    display: block;
   }
 }

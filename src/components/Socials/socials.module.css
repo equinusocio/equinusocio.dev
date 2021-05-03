@@ -22,7 +22,6 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: inline-grid;
-  grid-gap: 24px;
-  grid-auto-flow: column dense;
+  display: inline-flex;
+  gap: 1.09rem;
 }

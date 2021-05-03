@@ -10,8 +10,8 @@ interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
   as?: keyof JSX.IntrinsicElements;
   columnGap?: string;
   rowGap?: string;
-  verticalAlign?: 'unset' | 'start' | 'center' | 'end';
-  horizontalAlign?: 'unset' | 'start' | 'center' | 'end';
+  verticalAlign?: 'unset' | 'start' | 'center' | 'end' | 'space-between';
+  horizontalAlign?: 'unset' | 'start' | 'center' | 'end' | 'space-between';
   column?: boolean;
   wrap?: boolean;
 }

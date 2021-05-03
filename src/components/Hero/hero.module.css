@@ -88,6 +88,10 @@
     white-space: nowrap;
   }
 
+  & img {
+    width: 80%;
+  }
+
   & br {
     display: none;
 
@@ -95,8 +99,8 @@
       display: unset;
     }
   }
-}
 
-.Name {
-  display: inline;
+  .Name {
+    display: inline;
+  }
 }

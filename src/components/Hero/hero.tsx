@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Stack } from '@/components/Stack';
+import { Text } from '@/components/Text';
 import { Socials } from '@/components/Socials';
 import style from './hero.module.css';
 
@@ -23,24 +24,24 @@ export const Hero = () => (
       <Heading as="h1" className={style.Title}>
         Hi, my name is
         {' '}
+        <br />
         {' '}
-        <br aria-hidden="true" />
         <img className={style.Name} src="/mattia.svg" alt="Mattia" />
       </Heading>
-      <p>
+      <Text>
         As
         {' '}
         <strong>UX Engineer</strong>
         {' '}
         I build web interfaces, components library and design systems with a special love to CSS.
         I don’t work with CSS frameworks, I build them.
-      </p>
-      <p>
+      </Text>
+      <Text>
         I’m also an
         {' '}
         <strong>open-source developer</strong>
         , and in my spare time I do photography and digital art.
-      </p>
+      </Text>
       <Socials />
     </Stack>
   </Container>

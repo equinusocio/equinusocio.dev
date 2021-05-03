@@ -1,5 +1,6 @@
 @import 'media.css';
-@help-media-queries;
+
+/* @help-media-queries; */
 
 html {
   font-size: 137.5%;

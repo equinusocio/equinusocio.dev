@@ -36,7 +36,7 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
   return (
     <Stack
       className={clsx(className)}
-      columnGap="1.09rem"
+      columnGap="min(0.72rem, 10vw)"
       {...props}
     >
       <BlankButton
