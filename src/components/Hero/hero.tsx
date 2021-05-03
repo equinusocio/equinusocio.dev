@@ -8,6 +8,7 @@ import style from './hero.module.css';
 
 export const Hero = () => (
   <Container className={style.Hero}>
+    <Text size="small" className={style.SideText}>EQUINUSOCIO — FOR — FRIENDS</Text>
     <picture className={style.Photo}>
       <source srcSet="/mattia_astorino.webp" type="image/webp" />
       <img
@@ -23,7 +24,6 @@ export const Hero = () => (
     <Stack column>
       <Heading as="h1" className={style.Title}>
         Hi, my name is
-        {' '}
         <br />
         {' '}
         <img className={style.Name} src="/mattia.svg" alt="Mattia" />

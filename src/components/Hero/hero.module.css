@@ -6,7 +6,8 @@
   color: var(--foreground);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.09rem clamp(1.45rem, 10vw, 6.36rem);
+  position: relative;
+  gap: 1.09rem clamp(1.45rem, 10vw, 4.36rem);
 
   @media (--from-medium) {
     flex-wrap: nowrap;
@@ -23,12 +24,23 @@
     flex-grow: 1;
 
     @media (--from-large) {
-      max-width: 600px;
+      max-width: 580px;
       flex-basis: 40%;
     }
   }
 }
 
+.SideText {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateY(-50%);
+  display: none;
+
+  @media (--from-large) {
+    display: block;
+  }
+}
 
 .Photo {
   position: relative;
@@ -44,6 +56,7 @@
     max-height: unset;
   }
   @media (--from-large) {
+    margin-left: 5rem;
     max-width: 24.1rem;
   }
 
@@ -61,7 +74,9 @@
   mix-blend-mode: overlay;
   border-radius: inherit;
   height: 100%;
+  width: 100%;
 }
+
 
 @-moz-document url-prefix() {
   .Photo::before {
@@ -89,9 +104,6 @@
     white-space: nowrap;
   }
 
-  & img {
-    width: 80%;
-  }
 
   & br {
     display: none;
