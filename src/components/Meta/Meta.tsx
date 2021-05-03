@@ -28,6 +28,7 @@ export const Meta = ({
     <Head>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+      <meta name="theme-color" content="#1B31F3" />
       { keywords && <meta name="keywords" content={keywords.join()} />}
       <link rel="icon" href="favicon.svg" />
       <link rel="apple-touch-icon" href="touch-icon.png" />
