@@ -6,7 +6,7 @@
   color: var(--foreground);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.09rem clamp(1.45rem, 10vw, 4.36rem);
+  gap: 1.09rem clamp(1.45rem, 10vw, 6.36rem);
 
   @media (--from-medium) {
     flex-wrap: nowrap;
@@ -23,7 +23,7 @@
     flex-grow: 1;
 
     @media (--from-large) {
-      max-width: 580px;
+      max-width: 600px;
       flex-basis: 40%;
     }
   }
