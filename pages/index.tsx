@@ -24,9 +24,8 @@ const Home = () => (
           <Stack column verticalAlign="center" rowGap="1.81rem">
             <Heading as="h2">What I do</Heading>
             <Text>
-              There is a gap between designers and front-end developers.
-              There is where we find design scalability, accessibility,
-              semantic HTML, UI development, interactions and animations. Where UX Enginnering happens.
+              There is a gap between designers and front-end developers, where we find design scalability,
+              accessibility, semantic HTML, UI development, interactions and animations. Where UX engineering happens.
             </Text>
 
             <Text>
