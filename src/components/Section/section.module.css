@@ -41,6 +41,7 @@
   display: block;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
 
   @nest .Section[data-section-show-bg='true'] & {
     background-position: center top;
