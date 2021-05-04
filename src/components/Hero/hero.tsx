@@ -18,7 +18,7 @@ export const Hero = () => (
       <img
         className={style.Image}
         src="/mattia_astorino.jpg"
-        alt="Mattia Astorino"
+        alt="Mattia Astorino close-up portrait"
         width="529"
         height="696"
         decoding="async"
@@ -34,10 +34,8 @@ export const Hero = () => (
       </Heading>
       <Text>
         As
-        {' '}
-        <strong>UX Engineer</strong>
-        {' '}
-        I build web interfaces, components library and design systems with a special love to CSS.
+        <abbr title="User Experience"> UX </abbr>
+        engineer I build web interfaces, components library and design systems with a special love to CSS.
         I don’t work with CSS frameworks, I build them.
       </Text>
       <Text>
