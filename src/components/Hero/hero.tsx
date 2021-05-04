@@ -26,9 +26,9 @@ export const Hero = () => (
     </picture>
 
     <Stack column>
-      <Heading as="h1" className={style.Title}>
+      <Heading as="h1" className={style.Title} arial-label="Hi, my name is Mattia">
         Hi, my name is
-        <br />
+        <br aria-hidden="true" />
         {' '}
         <img className={style.Name} src="/mattia.svg" alt="Mattia" />
       </Heading>

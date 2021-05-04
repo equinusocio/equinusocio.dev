@@ -1,5 +1,5 @@
 import React, {
-  HTMLAttributes, MouseEvent, useCallback, useEffect, useState,
+  HTMLAttributes, MouseEvent, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { BlankButton } from '@/components/BlankButton';
 import clsx from 'clsx';
@@ -13,6 +13,7 @@ interface IThemeSwitcherProps extends HTMLAttributes<HTMLElement> {
 
 export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IThemeSwitcherProps) => {
   const [theme, setTheme] = useState<string>(defaultTheme);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback(
     () => (event: MouseEvent<HTMLOrSVGElement>) => {
@@ -30,41 +31,52 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
 
   useEffect(() => {
     const html = document.documentElement;
-    html.dataset.theme = localStorage.getItem('theme') ?? theme;
+    const savedTheme = localStorage.getItem('theme');
+
+    setTheme(savedTheme ?? 'auto');
+    html.dataset.theme = savedTheme ?? theme;
   }, [theme]);
 
   return (
-    <Stack
-      className={clsx(className)}
-      columnGap="min(0.72rem, 10vw)"
-      {...props}
-    >
-      <BlankButton
-        className={style.Action}
-        aria-label="Set light theme"
-        data-theme-name="light"
-        onClick={handleClick()}
+    <div ref={ref} className={clsx(className)}>
+      <Stack
+        columnGap="min(0.72rem, 10vw)"
+        role="radiogroup"
+        {...props}
       >
-        <Sun aria-hidden="true" role="presentation" />
-      </BlankButton>
+        <BlankButton
+          className={style.Action}
+          aria-label="Set light theme"
+          data-theme-name="light"
+          role="radio"
+          aria-checked={theme === 'light'}
+          onClick={handleClick()}
+        >
+          <Sun aria-hidden="true" role="presentation" />
+        </BlankButton>
 
-      <BlankButton
-        className={style.Action}
-        aria-label="Set automatic theme"
-        data-theme-name="auto"
-        onClick={handleClick()}
-      >
-        <Automatic aria-hidden="true" role="presentation" />
-      </BlankButton>
+        <BlankButton
+          className={style.Action}
+          aria-label="Set automatic theme"
+          data-theme-name="auto"
+          role="radio"
+          aria-checked={theme === 'auto'}
+          onClick={handleClick()}
+        >
+          <Automatic aria-hidden="true" role="presentation" />
+        </BlankButton>
 
-      <BlankButton
-        className={style.Action}
-        aria-label="Set dark theme"
-        data-theme-name="dark"
-        onClick={handleClick()}
-      >
-        <MoonStars aria-hidden="true" role="presentation" />
-      </BlankButton>
-    </Stack>
+        <BlankButton
+          className={style.Action}
+          aria-label="Set dark theme"
+          data-theme-name="dark"
+          role="radio"
+          aria-checked={theme === 'dark'}
+          onClick={handleClick()}
+        >
+          <MoonStars aria-hidden="true" role="presentation" />
+        </BlankButton>
+      </Stack>
+    </div>
   );
 };

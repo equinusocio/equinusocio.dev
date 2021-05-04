@@ -4,6 +4,10 @@
   align-items: var(--vAlign);
   justify-content: var(--hAlign);
 
+  & > * {
+    flex-grow: 1;
+  }
+
   &[data-stack-wrap='true'] {
     flex-wrap: wrap;
   }

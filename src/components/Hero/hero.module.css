@@ -32,10 +32,11 @@
 
 .SideText {
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: rotate(-90deg) translateY(-50%);
   display: none;
+  left: 2rem;
+  bottom: 50%;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left center;
 
   @media (--from-large) {
     display: block;
@@ -56,7 +57,7 @@
     max-height: unset;
   }
   @media (--from-large) {
-    margin-left: 5rem;
+    margin-left: 2rem;
     max-width: 24.1rem;
   }
 

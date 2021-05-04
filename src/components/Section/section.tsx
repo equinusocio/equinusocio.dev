@@ -20,6 +20,7 @@ export const Section = ({
   ...props
 }: ISectionProps) => {
   const dynamicStyle: CSSProperties = {
+    ...props.style,
     '--bg': (showBg && bg) && `url(/${bg})`,
   };
 
@@ -29,10 +30,11 @@ export const Section = ({
       data-section-show-bg={showBg}
       data-section-color={color}
       data-section-is-first={isFirst}
-      style={dynamicStyle}
       className={clsx(style.Section, className)}
+      verticalAlign="center"
       {...props}
     >
+      <span className={style.Bg} style={dynamicStyle} />
       {children}
     </Stack>
   );
