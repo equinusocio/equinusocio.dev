@@ -5,5 +5,10 @@
 
     /* Heading */
     --heading-foreground: hsl(var(--color-0));
+
+    /* Section */
+
+    --section-bright-background: hsl(var(--color-100));
+    --section-bright-foreground: hsl(var(--color-0));
   }
 }

@@ -28,14 +28,14 @@
   }
 
   &[data-section-color='bright'] {
-    --heading-foreground: hsl(var(--color-80));
+    --heading-foreground: var(--section-bright-foreground);
 
-    color: hsl(var(--color-70));
-    background-color: hsl(var(--color-100));
+    color: var(--section-bright-foreground);
+    background-color: var(--section-bright-background);
   }
 
   &[data-section-color='dark'] {
-    --heading-foreground: hsl(var(--color-10));
+    --heading-foreground: hsl(var(--color-0));
 
     color: hsl(var(--color-10));
     background-color: hsl(var(--color-90));
