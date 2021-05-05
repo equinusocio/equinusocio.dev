@@ -16,12 +16,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
   color: var(--global-foreground);
   background-color: hsl(var(--color-100) / 85%);
   backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
 
-  @media (--from-small) {
+  @media (--from-medium) {
     background: none;
     backdrop-filter: none;
     justify-content: flex-end;

@@ -19,7 +19,7 @@ const Home = () => (
         <Hero />
       </div>
     </Section>
-    <Section color="dark" bg="bg-2.svg">
+    <Section color="dark" bg="bg-2.svg" verticalAlign="center">
       <Container>
         <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
           <Stack column verticalAlign="center" rowGap="1.81rem">
@@ -35,6 +35,12 @@ const Home = () => (
           </Stack>
           <PillsCloud />
         </Stack>
+      </Container>
+    </Section>
+    <Section color="bright" bg="bg-3.svg">
+      <Container>
+        <Heading as="h2">Public Artifacts</Heading>
+        <Text>My latest public projects from employers and open-source</Text>
       </Container>
     </Section>
   </PageLayout>

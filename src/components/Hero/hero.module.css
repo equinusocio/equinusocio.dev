@@ -52,7 +52,6 @@
   max-width: 18rem;
   min-width: 13.6rem;
   max-height: 60vh;
-  z-index: 0;
 
   @media (--from-medium) {
     max-height: unset;
@@ -95,7 +94,7 @@
 .Title {
   transform: translateZ(0);
   margin-top: -9.09rem;
-  z-index: 0;
+  z-index: 1;
 
   @media (--from-medium) {
     margin-top: unset;

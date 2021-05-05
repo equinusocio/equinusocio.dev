@@ -22,17 +22,23 @@
   }
 
   &[data-section-color='accent'] {
+    --heading-foreground: hsl(var(--color-0));
+
     background-image: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
   }
 
   &[data-section-color='bright'] {
-    color: hsl(var(--color-100));
+    --heading-foreground: hsl(var(--color-80));
+
+    color: hsl(var(--color-70));
     background-color: hsl(var(--color-10));
   }
 
   &[data-section-color='dark'] {
+    --heading-foreground: hsl(var(--color-10));
+
     color: hsl(var(--color-10));
-    background-color: hsl(var(--color-100));
+    background-color: hsl(var(--color-90));
   }
 }
 

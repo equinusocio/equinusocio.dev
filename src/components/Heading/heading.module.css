@@ -10,6 +10,7 @@
     display: block;
     font-family: 'Playfair Display', serif;
     line-height: 1.2;
+    color: var(--heading-foreground);
 
     &[data-heading-line-height='none'] {
       line-height: 0.3;

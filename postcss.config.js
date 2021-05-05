@@ -31,12 +31,11 @@ module.exports = {
     /* More info at https://cssnano.co/ */
     cssnano: {
       preset: [
-        'advanced',
+        'default',
         {
           discardComments: {
             removeAll: true,
           },
-          reduceIdents: false,
         },
       ],
     },

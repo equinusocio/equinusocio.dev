@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import style from './stack.module.css';
 
-interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
+export interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
   // eslint-disable-next-line no-undef
   as?: keyof JSX.IntrinsicElements;
   columnGap?: string;
