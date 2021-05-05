@@ -30,7 +30,7 @@ export const Hero = () => (
         Hi, my name is
         <br aria-hidden="true" />
         {' '}
-        <img className={style.Name} src="/mattia.svg" alt="Mattia" />
+        <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
       </Heading>
       <Text>
         As

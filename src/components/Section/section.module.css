@@ -6,7 +6,7 @@
 
   @media (--from-medium) {
     z-index: 0;
-    min-height: 95vh;
+    min-height: 99vh;
     padding: 3.63rem 0;
 
     & > * {
@@ -31,7 +31,7 @@
     --heading-foreground: hsl(var(--color-80));
 
     color: hsl(var(--color-70));
-    background-color: hsl(var(--color-10));
+    background-color: hsl(var(--color-100));
   }
 
   &[data-section-color='dark'] {

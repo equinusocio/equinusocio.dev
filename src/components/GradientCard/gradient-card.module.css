@@ -1,0 +1,68 @@
+.GradientCard {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+  color: var(--color-0);
+  border-radius: 16px;
+  outline-offset: -5px;
+  background:
+    linear-gradient(
+      139.15deg,
+      var(--c1) 0%,
+      var(--c2) 100%
+    );
+
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: calc((1 / 1) * 100%);
+  }
+
+  &::after {
+    --size: 600px;
+
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, var(--color-20), transparent);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.1s ease;
+    opacity: 0;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  &:hover::after {
+    opacity: 0.5;
+  }
+
+  & > * {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.Content {
+  padding: 0.72rem 1.09rem;
+}
+
+.Title {
+  color: var(--color-10);
+}
+
+.Label {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.Text {
+  line-height: 1.2;
+}

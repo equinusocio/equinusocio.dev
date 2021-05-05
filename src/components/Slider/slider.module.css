@@ -1,0 +1,55 @@
+.Slider {
+  --mobileGap: 1.09rem;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--columnSize);
+  gap: var(--mobileGap);
+  padding-inline: var(--mobileGap);
+  -webkit-overflow-scrolling: touch;
+  padding-block: 0 var(--mobileGap) var(--mobileGap) var(--mobileGap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding: var(--mobileGap);
+
+  @media (width < 48em) {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 6px;
+      border: 3px solid transparent;
+    }
+  }
+  @media (--from-small) {
+    grid-auto-flow: unset;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--desktopColumnSize), 100%), 1fr));
+  }
+  @media (--from-medium) {
+    row-gap: var(--rGap);
+    column-gap: var(--cGap);
+    padding: 0 4rem var(--cGap);
+  }
+
+  & > * {
+    scroll-snap-align: start;
+  }
+
+  &::after {
+    display: block;
+    height: 100%;
+    width: 1.09rem;
+    content: '';
+  }
+}

@@ -10,6 +10,7 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Text } from '@/components/Text';
 import { PillsCloud } from '@/components/PillsCloud';
+import { Slider } from '@/components/Slider';
 
 const Home = () => (
   <PageLayout showHeader={false}>
@@ -40,7 +41,15 @@ const Home = () => (
     <Section color="bright" bg="bg-3.svg">
       <Container>
         <Heading as="h2">Public Artifacts</Heading>
-        <Text>My latest public projects from employers and open-source</Text>
+        <Stack horizontalAlign="center">
+          <Text>My latest public projects from employers and open-source</Text>
+        </Stack>
+        <Slider>
+          <span>A</span>
+          <span>B</span>
+          <span>C</span>
+          <span>D</span>
+        </Slider>
       </Container>
     </Section>
   </PageLayout>

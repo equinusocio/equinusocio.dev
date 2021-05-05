@@ -16,7 +16,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
   color: var(--global-foreground);
   background-color: hsl(var(--color-100) / 85%);
   backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
