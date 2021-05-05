@@ -4,9 +4,4 @@
 
   /* Heading */
   --heading-foreground: hsl(var(--color-80));
-
-  /* Section */
-
-  --section-bright-background: hsl(var(--color-0));
-  --section-bright-foreground: hsl(var(--color-70));
 }

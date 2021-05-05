@@ -6,7 +6,7 @@
 
   @media (--from-medium) {
     z-index: 0;
-    min-height: 99vh;
+    min-height: 120vh;
     padding: 3.63rem 0;
 
     & > * {
@@ -15,30 +15,17 @@
   }
 
   &[data-section-is-first='true'] {
+    min-height: 100vh;
 
     @media (--from-small) {
       padding-top: 0;
     }
   }
 
-  &[data-section-color='accent'] {
+  &[data-section-accent='true'] {
     --heading-foreground: hsl(var(--color-0));
 
     background-image: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
-  }
-
-  &[data-section-color='bright'] {
-    --heading-foreground: var(--section-bright-foreground);
-
-    color: var(--section-bright-foreground);
-    background-color: var(--section-bright-background);
-  }
-
-  &[data-section-color='dark'] {
-    --heading-foreground: hsl(var(--color-0));
-
-    color: hsl(var(--color-10));
-    background-color: hsl(var(--color-90));
   }
 }
 

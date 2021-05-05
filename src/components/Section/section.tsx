@@ -6,7 +6,7 @@ import style from './section.module.css';
 interface ISectionProps extends IStackProps {
   showBg?: boolean;
   bg?: string;
-  color?: 'accent' | 'bright' | 'dark';
+  accent?: boolean;
   isFirst?: boolean;
 }
 
@@ -14,7 +14,7 @@ export const Section = ({
   children,
   showBg = true,
   className,
-  color = 'accent',
+  accent,
   isFirst = false,
   bg,
   ...props
@@ -28,7 +28,7 @@ export const Section = ({
     <Stack
       as="section"
       data-section-show-bg={showBg}
-      data-section-color={color}
+      data-section-accent={accent}
       data-section-is-first={isFirst}
       className={clsx(style.Section, className)}
       {...props}

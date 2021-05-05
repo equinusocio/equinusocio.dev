@@ -2,13 +2,22 @@
   --shadow-color: var(--color-100);
 
   border-radius: 1rem 1rem 1rem 1rem / 1.11rem 1.11rem 1.11rem 1.11rem;
-  background-color: hsl(var(--color-10));
+  background-color: hsl(var(--color-0));
   padding: 0.36rem 0.72rem;
   font-weight: 700;
-  color: hsl(var(--color-80));
+  color: hsl(var(--color-90));
   display: inline-flex;
   white-space: nowrap;
   align-items: center;
   gap: 0.36rem;
   cursor: default;
+
+  /* stylelint-disable number-max-precision */
+  box-shadow:
+    0 60px 107px hsl(var(--color-100) / 0.04),
+    0 25.0666px 44.702px hsl(var(--color-100) / 0.0287542),
+    0 13.4018px 23.8999px hsl(var(--color-100) / 0.0238443),
+    0 7.51293px 13.3981px hsl(var(--color-100) / 0.02),
+    0 3.99006px 7.11561px hsl(var(--color-100) / 0.0161557),
+    0 1.66035px 2.96096px hsl(var(--color-100) / 0.0112458);
 }

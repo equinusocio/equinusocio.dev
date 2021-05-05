@@ -14,13 +14,13 @@ import { Slider } from '@/components/Slider';
 
 const Home = () => (
   <PageLayout showHeader={false}>
-    <Section bg="bg-1.svg" isFirst>
+    <Section bg="bg-1.svg" accent isFirst>
       <div>
         <Header />
         <Hero />
       </div>
     </Section>
-    <Section color="dark" bg="bg-2.svg" verticalAlign="center">
+    <Section color="bright" bg="bg-2.svg" verticalAlign="center">
       <Container>
         <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
           <Stack column verticalAlign="center" rowGap="1.81rem">
@@ -38,11 +38,13 @@ const Home = () => (
         </Stack>
       </Container>
     </Section>
-    <Section color="bright" bg="bg-3.svg">
+    <Section color="bright" bg="bg-3.svg" verticalAlign="center">
       <Container>
-        <Heading as="h2">Public Artifacts</Heading>
-        <Stack horizontalAlign="center">
-          <Text>My latest public projects from employers and open-source</Text>
+        <Stack column>
+          <Heading as="h2">Public Artifacts</Heading>
+          <Stack horizontalAlign="center">
+            <Text>My latest public projects from employers and open-source</Text>
+          </Stack>
         </Stack>
         <Slider>
           <span>A</span>
