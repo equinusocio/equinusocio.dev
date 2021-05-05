@@ -18,8 +18,8 @@
   right: 0;
   z-index: 1;
   color: var(--global-foreground);
-  background-color: hsl(var(--color-100) / 60%);
-  backdrop-filter: blur(20px);
+  background-color: hsl(var(--color-100) / 85%);
+  backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
 
   @media (--from-small) {
     background: none;

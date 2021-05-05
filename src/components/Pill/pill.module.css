@@ -1,0 +1,14 @@
+.Pill {
+  --shadow-color: var(--color-100);
+
+  border-radius: 1rem 1rem 1rem 1rem / 1.11rem 1.11rem 1.11rem 1.11rem;
+  background-color: hsl(var(--color-10));
+  padding: 0.36rem 0.72rem;
+  font-weight: 700;
+  color: hsl(var(--color-80));
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 0.36rem;
+  cursor: default;
+}

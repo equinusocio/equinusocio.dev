@@ -9,6 +9,7 @@ import { Stack } from '@/components/Stack';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Text } from '@/components/Text';
+import { PillsCloud } from '@/components/PillsCloud';
 
 const Home = () => (
   <PageLayout showHeader={false}>
@@ -20,7 +21,7 @@ const Home = () => (
     </Section>
     <Section color="dark" bg="bg-2.svg">
       <Container>
-        <Stack>
+        <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
           <Stack column verticalAlign="center" rowGap="1.81rem">
             <Heading as="h2">What I do</Heading>
             <Text>
@@ -32,36 +33,7 @@ const Home = () => (
               <strong>This is the front of the front-end.</strong>
             </Text>
           </Stack>
-          <div>B</div>
-        </Stack>
-      </Container>
-    </Section>
-    <Section color="bright" bg="bg-3.svg">
-      <Container>
-        <Stack>
-          <Stack column verticalAlign="center" rowGap="1.81rem">
-            <Heading as="h2">What I do</Heading>
-            <Text>
-              There is a gap between designers and front-end developers, where we find design scalability,
-              accessibility, semantic
-              {' '}
-              <abbr title="HyperText Markup Language">HTML</abbr>
-              ,
-              {' '}
-              <abbr title="User Interface">UI</abbr>
-              {' '}
-              development, interactions and animations. Where
-              {' '}
-              <abbr title="User Experience">UX</abbr>
-              {' '}
-              Engineering happens.
-            </Text>
-
-            <Text>
-              <strong>This is the front of the front-end.</strong>
-            </Text>
-          </Stack>
-          <div>B</div>
+          <PillsCloud />
         </Stack>
       </Container>
     </Section>

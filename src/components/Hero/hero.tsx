@@ -34,8 +34,8 @@ export const Hero = () => (
       </Heading>
       <Text>
         As
-        <abbr title="User Experience"> UX </abbr>
-        engineer I build web interfaces, components library and design systems with a special love to CSS.
+        <strong> UX engineer </strong>
+        I build web interfaces, components library and design systems with a special love to CSS.
         I don’t work with CSS frameworks, I build them.
       </Text>
       <Text>

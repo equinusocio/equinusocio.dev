@@ -1,0 +1,16 @@
+.PillsCloud {
+  position: relative;
+  max-width: 27.27rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.Item {
+
+  @media (--from-large) {
+    position: absolute;
+    top: var(--top, 0);
+    left: var(--left, 0);
+  }
+}

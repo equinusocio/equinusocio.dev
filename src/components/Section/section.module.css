@@ -3,9 +3,9 @@
 .Section {
   padding: 2.54rem 0;
   position: relative;
-  z-index: 0;
 
   @media (--from-medium) {
+    z-index: 0;
     min-height: 95vh;
     padding: 3.63rem 0;
 
@@ -43,9 +43,12 @@
   z-index: -1;
   pointer-events: none;
 
-  @nest .Section[data-section-show-bg='true'] & {
-    background-position: center top;
-    background-attachment: fixed;
-    background-image: var(--bg);
+  @media (--from-medium) {
+
+    @nest .Section[data-section-show-bg='true'] & {
+      background-position: center top;
+      background-attachment: fixed;
+      background-image: var(--bg);
+    }
   }
 }

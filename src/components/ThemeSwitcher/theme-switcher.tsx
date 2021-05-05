@@ -42,6 +42,7 @@ export const ThemeSwitcher = ({ defaultTheme = 'auto', className, ...props }: IT
       <Stack
         columnGap="min(0.72rem, 10vw)"
         role="radiogroup"
+        wrap={false}
         {...props}
       >
         <BlankButton
