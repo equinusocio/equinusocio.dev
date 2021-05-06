@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { CSSProperties, HTMLAttributes } from 'react';
-import style from './gradient-card.module.csshsl()';
+import style from './gradient-card.module.css';
 
 interface IGradientCardProps extends HTMLAttributes<HTMLElement> {
   url: string;
