@@ -47,7 +47,7 @@
   min-width: 2.9rem;
   display: none;
 
-  @media (--from-small) {
+  @media (--from-medium) {
     display: block;
   }
 }

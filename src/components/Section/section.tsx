@@ -4,7 +4,6 @@ import { Stack, IStackProps } from '@/components/Stack';
 import style from './section.module.css';
 
 interface ISectionProps extends IStackProps {
-  showBg?: boolean;
   bg?: string;
   accent?: boolean;
   isFirst?: boolean;
@@ -12,7 +11,6 @@ interface ISectionProps extends IStackProps {
 
 export const Section = ({
   children,
-  showBg = true,
   className,
   accent,
   isFirst = false,
@@ -21,13 +19,13 @@ export const Section = ({
 }: ISectionProps) => {
   const dynamicStyle: CSSProperties = {
     ...props.style,
-    '--bg': (showBg && bg) && `url(/${bg})`,
+    '--bg': bg && `url(/${bg})`,
   };
 
   return (
     <Stack
       as="section"
-      data-section-show-bg={showBg}
+      data-section-show-bg={Boolean(bg)}
       data-section-accent={accent}
       data-section-is-first={isFirst}
       className={clsx(style.Section, className)}

@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  gap: 1.09rem clamp(1.45rem, 10vw, 4.36rem);
+  gap: 1.09rem clamp(1.45rem, 10vw, 6.36rem);
 
   @media (--from-medium) {
     flex-wrap: nowrap;

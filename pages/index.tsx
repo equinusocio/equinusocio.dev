@@ -20,7 +20,7 @@ const Home = () => (
         <Hero />
       </div>
     </Section>
-    <Section color="bright" bg="bg-2.svg" verticalAlign="center">
+    <Section bg="bg-2.svg" verticalAlign="center">
       <Container>
         <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
           <Stack column verticalAlign="center" rowGap="1.81rem">
@@ -38,7 +38,7 @@ const Home = () => (
         </Stack>
       </Container>
     </Section>
-    <Section color="bright" bg="bg-3.svg" verticalAlign="center">
+    <Section bg="bg-3.svg" verticalAlign="center">
       <Container>
         <Stack column>
           <Heading as="h2">Public Artifacts</Heading>

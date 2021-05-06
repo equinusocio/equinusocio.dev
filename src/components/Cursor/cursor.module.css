@@ -15,7 +15,15 @@
   z-index: 1;
   transition: opacity 800ms ease-out;
   transition-delay: 500ms;
+  opacity: 0;
 
+  & circle {
+    transform: scale(0.5);
+    transform-origin: 50%;
+    fill: hsl(var(--accent-color-alt));
+  }
+
+  /*
   &[data-size='big'] {
     transform: scale(0.5);
     opacity: 0.2;
@@ -27,5 +35,5 @@
     & circle {
       fill: hsl(var(--accent-color-alt));
     }
-  }
+  } */
 }

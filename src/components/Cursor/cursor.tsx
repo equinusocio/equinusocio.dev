@@ -1,32 +1,14 @@
-import gsap, { TweenLite, CSSPlugin } from 'gsap';
+import { motion } from 'framer-motion';
 import React, {
-  Fragment,
-  useCallback, useEffect, useRef, useState,
+  useCallback, useEffect, useState,
 } from 'react';
+import { useMouse } from 'rooks';
 
 import style from './cursor.module.css';
 
-gsap.registerPlugin(CSSPlugin);
-
 export const Cursor = () => {
-  const bigBallRef = useRef(null);
-  const [isMoving, setIsMoving] = useState(false);
-
-  const onMouseMove = useCallback(
-    (e) => {
-      setIsMoving(true);
-
-      if (bigBallRef.current) {
-        TweenLite.to(bigBallRef.current, 0.4, {
-          x: e.clientX - 50,
-          y: e.clientY - 50,
-          force3D: true,
-          rotation: 0.01,
-        });
-      }
-    },
-    [],
-  );
+  const { clientX, clientY } = useMouse();
+  const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const onMouseHover = useCallback(
     (e) => {
@@ -34,11 +16,7 @@ export const Cursor = () => {
         switch (e.target.nodeName) {
           case 'BUTTON':
           case 'A':
-            if (bigBallRef.current) {
-              TweenLite.to(bigBallRef.current, 0.3, {
-                scale: 1,
-              });
-            }
+            setIsHovering(true);
             break;
 
           default:
@@ -50,38 +28,41 @@ export const Cursor = () => {
   );
   const onMouseHoverOut = useCallback(
     () => {
-      if (bigBallRef.current) {
-        TweenLite.to(bigBallRef.current, 0.3, {
-          scale: 0.5,
-        });
-      }
+      setIsHovering(false);
     },
     [],
   );
 
   useEffect(() => {
     const docBody = document.body;
-    docBody.addEventListener('mousemove', onMouseMove, true);
     docBody.addEventListener('mouseenter', onMouseHover, true);
     docBody.addEventListener('mouseleave', onMouseHoverOut, true);
 
     return () => {
-      docBody.removeEventListener('mousemove', onMouseMove);
       docBody.removeEventListener('mouseenter', onMouseHover);
       docBody.removeEventListener('mouseleave', onMouseHoverOut);
     };
-  }, [onMouseHover, onMouseMove, onMouseHoverOut]);
+  }, [onMouseHover, onMouseHoverOut]);
 
   return (
     <div className={style.Cursor}>
-      {isMoving && (
-        <Fragment>
-          <div className={style.Ball} data-size="big" ref={bigBallRef}>
-            <svg height="100" width="100">
-              <circle cx="50" cy="50" r="25" strokeWidth="0" />
-            </svg>
-          </div>
-        </Fragment>
+      {(clientX || clientY) && (
+        <motion.div
+          animate={{
+            x: clientX ? clientX - 50 : 0,
+            y: clientY ? clientY - 50 : 0,
+            opacity: 0.2,
+            scale: isHovering ? 2 : 1,
+          }}
+          transition={{
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className={style.Ball}
+        >
+          <svg height="100" width="100">
+            <circle cx="50" cy="50" r="25" strokeWidth="0" />
+          </svg>
+        </motion.div>
       )}
     </div>
   );
