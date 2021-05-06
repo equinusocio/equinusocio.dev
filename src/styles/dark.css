@@ -5,5 +5,8 @@
 
     /* Heading */
     --heading-foreground: hsl(var(--color-0));
+
+    /* Pill */
+    --pill-background: hsl(var(--color-90));
   }
 }

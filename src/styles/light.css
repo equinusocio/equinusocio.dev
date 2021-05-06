@@ -4,4 +4,7 @@
 
   /* Heading */
   --heading-foreground: hsl(var(--color-80));
+
+  /* Pill */
+  --pill-background: hsl(var(--color-70));
 }
