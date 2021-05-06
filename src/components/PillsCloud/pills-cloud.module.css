@@ -2,11 +2,14 @@
   position: relative;
   max-width: 27.27rem;
   width: 100%;
-  list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
 
-  @media (--from-large) {
-    min-height: 60vh;
+  & ul {
+    list-style: none;
   }
 }
 

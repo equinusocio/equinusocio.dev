@@ -18,7 +18,7 @@
   }
 
   &[data-pill-color='green'] {
-    background-color: #54ff98;
+    background-color: #9cffc4;
     color: #004f1f;
   }
 
@@ -58,7 +58,7 @@
   }
 
   &[data-pill-color='cyan'] {
-    background-color: #00f4e6;
+    background-color: #9dfbf6;
     color: #005954;
   }
 

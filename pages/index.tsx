@@ -20,6 +20,7 @@ const Home = () => (
         <Hero />
       </div>
     </Section>
+
     <Section bg="bg-2.svg" verticalAlign="center">
       <Container>
         <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
@@ -38,6 +39,7 @@ const Home = () => (
         </Stack>
       </Container>
     </Section>
+
     <Section bg="bg-3.svg" verticalAlign="center">
       <Container>
         <Stack column>
