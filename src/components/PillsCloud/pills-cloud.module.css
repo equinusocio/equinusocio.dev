@@ -1,3 +1,5 @@
+@import 'media.css';
+
 .PillsCloud {
   position: relative;
   max-width: 27.27rem;
@@ -13,8 +15,7 @@
   }
 }
 
-.Item {
-  position: relative;
+.CloudItem {
 
   @media (--from-large) {
     position: absolute;
