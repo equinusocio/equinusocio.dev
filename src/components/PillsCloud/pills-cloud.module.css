@@ -14,6 +14,7 @@
 }
 
 .Item {
+  position: relative;
 
   @media (--from-large) {
     position: absolute;
