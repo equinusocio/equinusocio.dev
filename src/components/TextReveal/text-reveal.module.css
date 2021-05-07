@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: hsl(var(--accent-color-alt));
+    background-color: var(--c, hsl(var(--accent-color-alt)));
     transform: scaleX(0);
     transform-origin: 0 50%;
     pointer-events: none;

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import React, { HTMLAttributes } from 'react';
-import style from './text-reveal.module.css';
+import React, { CSSProperties, HTMLAttributes } from 'react';
+import styles from './text-reveal.module.css';
 
 interface ITextRevealProps extends HTMLAttributes<HTMLSpanElement> {
   color?: string;
@@ -9,9 +9,17 @@ interface ITextRevealProps extends HTMLAttributes<HTMLSpanElement> {
 export const TextReveal = ({
   children,
   className,
+  color,
+  style,
   ...props
-}: ITextRevealProps) => (
-  <span className={clsx(style.TextReveal, className)} {...props}>
-    {children}
-  </span>
-);
+}: ITextRevealProps) => {
+  const dynamicStyle: CSSProperties = {
+    '--c': color,
+  };
+
+  return (
+    <span style={{ ...style, ...dynamicStyle }} className={clsx(styles.TextReveal, className)} {...props}>
+      {children}
+    </span>
+  );
+};
