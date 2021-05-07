@@ -96,9 +96,17 @@
 
 
 .Title {
+  --animation-delay: 0;
+  --animation-duration: 800ms;
+  --animation-iterations: 1;
+
   transform: translateZ(0);
   margin-top: -9.09rem;
   z-index: 2;
+  position: relative;
+  font-size: 10vw;
+  animation-name: clip-text;
+  cursor: default;
 
   @media (--from-medium) {
     margin-top: unset;
@@ -107,6 +115,21 @@
   }
   @media (--from-extraLarge) {
     white-space: nowrap;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(var(--accent-color-alt));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
   }
 
 
@@ -122,3 +145,44 @@
     display: inline;
   }
 }
+
+
+.Title,
+.Title::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
