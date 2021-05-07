@@ -25,7 +25,7 @@ export const PillsCloud = ({
       opacity: 1,
       transition: {
         when: 'beforeChildren',
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
     hidden: {
@@ -37,8 +37,18 @@ export const PillsCloud = ({
   };
 
   const item = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      scale: 1,
+      transition: {
+        ease: 'circOut',
+      },
+    },
+    hidden: {
+      scale: 0,
+      transition: {
+        ease: 'circOut',
+      },
+    },
   };
 
   return (
