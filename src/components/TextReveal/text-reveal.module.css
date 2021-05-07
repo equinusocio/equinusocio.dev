@@ -1,7 +1,6 @@
 .TextReveal {
   --animation-delay: 0;
   --animation-duration: 800ms;
-  --animation-iterations: 1;
 
   position: relative;
   animation-name: clip-text;
@@ -27,7 +26,7 @@
 .TextReveal,
 .TextReveal::after {
   animation-delay: var(--animation-delay, 2s);
-  animation-iteration-count: var(--animation-duration, 1);
+  animation-iteration-count: 1;
   animation-duration: var(--animation-duration, 800ms);
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);

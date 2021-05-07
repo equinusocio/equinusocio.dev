@@ -39,15 +39,15 @@ export const PillsCloud = ({
   const item = {
     visible: {
       scale: 1,
-      transition: {
-        ease: 'circOut',
-      },
+      type: 'spring',
+      bounce: 0.4,
+      stiffness: 50,
     },
     hidden: {
       scale: 0,
-      transition: {
-        ease: 'circOut',
-      },
+      type: 'spring',
+      bounce: 0.4,
+      stiffness: 50,
     },
   };
 
