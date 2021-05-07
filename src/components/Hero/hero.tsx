@@ -4,6 +4,7 @@ import { Heading } from '@/components/Heading';
 import { Stack } from '@/components/Stack';
 import { Text } from '@/components/Text';
 import { Socials } from '@/components/Socials';
+import { TextReveal } from '@/components/TextReveal';
 import style from './hero.module.css';
 
 export const Hero = () => (
@@ -27,10 +28,12 @@ export const Hero = () => (
 
     <Stack column>
       <Heading as="h1" className={style.Title} arial-label="Hi, my name is Mattia">
-        Hi, my name is
-        <br aria-hidden="true" />
-        {' '}
-        <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
+        <TextReveal>
+          Hi, my name is
+          <br aria-hidden="true" />
+          {' '}
+          <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
+        </TextReveal>
       </Heading>
       <Text>
         As
