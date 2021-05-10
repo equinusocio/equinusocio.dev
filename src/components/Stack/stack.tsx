@@ -10,10 +10,10 @@ export interface IStackProps extends HTMLAttributes<HTMLOrSVGElement> {
   as?: keyof JSX.IntrinsicElements;
   columnGap?: string;
   rowGap?: string;
-  verticalAlign?: 'unset' | 'start' | 'center' | 'end' | 'space-between';
-  horizontalAlign?: 'unset' | 'start' | 'center' | 'end' | 'space-between';
-  column?: boolean;
-  wrap?: boolean;
+  verticalAlign?: 'unset' | 'start' | 'center' | 'end';
+  horizontalAlign?: 'unset' | 'start' | 'center' | 'end';
+  columns?: number;
+  inline?: boolean;
 }
 
 export const Stack: FC<IStackProps> = ({
@@ -22,9 +22,9 @@ export const Stack: FC<IStackProps> = ({
   rowGap = '1.45rem',
   verticalAlign = 'unset',
   horizontalAlign = 'unset',
-  column,
+  columns = 1,
+  inline,
   className,
-  wrap = true,
   children,
   ...props
 }: IStackProps) => {
@@ -35,13 +35,13 @@ export const Stack: FC<IStackProps> = ({
     '--rowGap': rowGap,
     '--vAlign': verticalAlign,
     '--hAlign': horizontalAlign,
-  }), [columnGap, rowGap, verticalAlign, horizontalAlign]);
+    '--columns': columns,
+  }), [columnGap, rowGap, verticalAlign, horizontalAlign, columns]);
 
   return (
     <As
       style={dynamicStyle}
-      data-stack-column={column}
-      data-stack-wrap={wrap}
+      data-stack-inline={inline}
       className={clsx(style.Stack, className)}
       {...props}
     >

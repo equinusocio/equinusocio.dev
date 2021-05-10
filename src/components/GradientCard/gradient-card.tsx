@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import React, { CSSProperties, HTMLAttributes } from 'react';
+import { Stack } from '@/components/Stack';
+import { Text } from '@/components/Text';
+import { Heading } from '@/components/Heading';
 import style from './gradient-card.module.css';
 
 interface IGradientCardProps extends HTMLAttributes<HTMLElement> {
@@ -35,9 +38,13 @@ export const GradientCard = ({
         target="_blank"
         {...props}
       >
-        {label}
-        {title}
-        {text}
+        <Stack className={style.Content} rowGap="0.72rem">
+          <div className={style.Title}>
+            <Text size="small" className={style.Label}>{label}</Text>
+            <Heading as="h4" semantic={false} className={style.Title}>{title}</Heading>
+          </div>
+          <Text size="small">{text}</Text>
+        </Stack>
       </a>
     </Link>
   );

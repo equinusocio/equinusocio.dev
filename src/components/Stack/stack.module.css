@@ -1,17 +1,22 @@
+@import 'media.css';
+
 .Stack {
-  display: flex;
-  gap: var(--rowGap) var(--columnGap);
+  display: grid;
+  grid-gap: var(--rowGap) var(--columnGap);
   align-items: var(--vAlign);
   justify-content: var(--hAlign);
 
-
-  &[data-stack-wrap='true'] {
-    flex-wrap: wrap;
+  &[data-stack-inline='false'] {
+    place-items: var(--hAlign);
   }
 
-  &[data-stack-column='true'] {
-    flex-direction: column;
-    align-items: var(--hAlign);
-    justify-content: var(--vAlign);
+  &[data-stack-inline='true'] {
+    display: inline-grid;
+    grid-auto-flow: column dense;
+    grid-template-columns: auto;
+  }
+
+  @media (--from-medium) {
+    grid-template-columns: repeat(var(--columns), 1fr);
   }
 }

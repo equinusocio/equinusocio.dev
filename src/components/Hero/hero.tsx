@@ -33,7 +33,9 @@ export const Hero = () => (
         — FOR — FRIENDS
       </TextReveal>
     </Text>
-    <picture className={style.Photo}>
+    <picture
+      className={style.Photo}
+    >
       <source srcSet="/mattia_astorino.webp" type="image/webp" />
       <img
         className={style.Image}
@@ -45,7 +47,7 @@ export const Hero = () => (
       />
     </picture>
 
-    <Stack column>
+    <Stack>
       <Heading as="h1" className={style.Title} arial-label="Hi, my name is Mattia">
         <TextReveal>
           Hi, my name is

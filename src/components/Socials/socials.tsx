@@ -7,7 +7,7 @@ import {
 import style from './socials.module.css';
 
 export const Socials = () => (
-  <Stack column horizontalAlign="start" rowGap="0.36rem" as="address" className={style.Socials}>
+  <Stack horizontalAlign="start" rowGap="0.36rem" as="address" className={style.Socials}>
     <Text size="small"><b>But there is more...</b></Text>
     <ul className={style.List}>
       <li>

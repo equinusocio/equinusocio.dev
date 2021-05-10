@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   aspect-ratio: 1/1;
-  overflow: hidden;
   position: relative;
-  color: var(--color-0);
+  color: hsl(var(--color-0));
   border-radius: 16px;
   outline-offset: -5px;
   background:
@@ -21,27 +20,6 @@
     padding-top: calc((1 / 1) * 100%);
   }
 
-  &::after {
-    --size: 600px;
-
-    content: '';
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: var(--size);
-    height: var(--size);
-    background: radial-gradient(circle closest-side, var(--color-20), transparent);
-    transform: translate(-50%, -50%);
-    transition: opacity 0.1s ease;
-    opacity: 0;
-    z-index: 1;
-    mix-blend-mode: overlay;
-  }
-
-  &:hover::after {
-    opacity: 0.5;
-  }
-
   & > * {
     position: absolute;
     right: 0;
@@ -55,7 +33,7 @@
 }
 
 .Title {
-  color: var(--color-10);
+  color: hsl(var(--color-10));
 }
 
 .Label {

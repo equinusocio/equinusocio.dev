@@ -13,6 +13,7 @@ import { PillsCloud } from '@/components/PillsCloud';
 import { Slider } from '@/components/Slider';
 import { useInViewRef } from 'rooks';
 import { TextReveal } from '@/components/TextReveal';
+import { GradientCard } from '@/components/GradientCard';
 
 const Home = () => {
   const [skillsRef, skillsRefInView] = useInViewRef();
@@ -29,8 +30,8 @@ const Home = () => {
       <Section bg="bg-2.svg" verticalAlign="center">
         <Container>
           <div ref={skillsRef}>
-            <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
-              <Stack column verticalAlign="center" rowGap="1.81rem">
+            <Stack verticalAlign="start" columns={2} columnGap="min(10vw, 10.90rem)">
+              <Stack verticalAlign="center" rowGap="1.81rem">
                 <Heading as="h2">
                   <TextReveal isRunning={skillsRefInView}>What I do</TextReveal>
                 </Heading>
@@ -50,21 +51,24 @@ const Home = () => {
         </Container>
       </Section>
 
-      <Section bg="bg-3.svg" verticalAlign="center">
+      <Section bg="bg-3.svg" verticalAlign="start" columns={1}>
         <Container>
-          <Stack column>
+          <Stack>
             <Heading as="h2">Public Artifacts</Heading>
             <Stack horizontalAlign="center">
               <Text>My latest public projects from employers and open-source</Text>
             </Stack>
           </Stack>
-          <Slider>
-            <span>A</span>
-            <span>B</span>
-            <span>C</span>
-            <span>D</span>
-          </Slider>
         </Container>
+        <Slider>
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+        </Slider>
       </Section>
     </PageLayout>
   );
