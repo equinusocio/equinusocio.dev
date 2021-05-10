@@ -41,7 +41,7 @@
   @media (--from-medium) {
     row-gap: var(--rGap);
     column-gap: var(--cGap);
-    padding: 0 4rem var(--cGap);
+    padding-bottom: var(--cGap);
   }
 
   & > * {

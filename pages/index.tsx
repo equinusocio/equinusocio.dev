@@ -68,6 +68,7 @@ const Home = () => {
           <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
           <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
           <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
         </Slider>
       </Section>
     </PageLayout>
