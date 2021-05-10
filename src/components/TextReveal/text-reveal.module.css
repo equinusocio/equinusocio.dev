@@ -1,6 +1,6 @@
 .TextReveal {
   --animation-delay: 0;
-  --animation-duration: 800ms;
+  --animation-duration: 1.2s;
 
   position: relative;
   animation-name: clip-text;

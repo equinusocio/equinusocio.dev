@@ -48,6 +48,7 @@ export const Cursor = () => {
     <div className={style.Cursor}>
       {(clientX || clientY) && (
         <motion.div
+          className={style.Ball}
           animate={{
             x: clientX ? clientX - 50 : 0,
             y: clientY ? clientY - 50 : 0,
@@ -57,7 +58,6 @@ export const Cursor = () => {
           transition={{
             ease: [0.22, 1, 0.36, 1],
           }}
-          className={style.Ball}
         >
           <svg height="100" width="100">
             <circle cx="50" cy="50" r="25" strokeWidth="0" />

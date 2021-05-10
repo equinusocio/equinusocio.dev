@@ -11,7 +11,7 @@ import style from './pills-cloud.module.css';
 export const PillsCloud = ({
   className,
 }: HTMLAttributes<HTMLUListElement>) => {
-  const [myRef, inView] = useInViewRef();
+  const [componentRef, inView] = useInViewRef();
   const controls = useAnimation();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export const PillsCloud = ({
       initial="hidden"
       animate={controls}
       variants={list}
-      ref={myRef}
+      ref={componentRef}
       className={clsx(style.PillsCloud, className)}
     >
       <motion.li

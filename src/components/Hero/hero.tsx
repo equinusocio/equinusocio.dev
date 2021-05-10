@@ -5,14 +5,22 @@ import { Stack } from '@/components/Stack';
 import { Text } from '@/components/Text';
 import { Socials } from '@/components/Socials';
 import { TextReveal } from '@/components/TextReveal';
+import { motion } from 'framer-motion';
 import style from './hero.module.css';
+
+const fadeIn = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: '20%' },
+};
 
 export const Hero = () => (
   <Container className={style.Hero}>
     <Text size="small" className={style.SideText}>
-      <Text as="span" color="hsl(var(--accent-color-alt))">EQUINUSOCIO</Text>
-      {' '}
-      — FOR — FRIENDS
+      <TextReveal>
+        <Text as="span" color="hsl(var(--accent-color-alt))">EQUINUSOCIO</Text>
+        {' '}
+        — FOR — FRIENDS
+      </TextReveal>
     </Text>
     <picture className={style.Photo}>
       <source srcSet="/mattia_astorino.webp" type="image/webp" />
@@ -35,19 +43,25 @@ export const Hero = () => (
           <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
         </TextReveal>
       </Heading>
-      <Text>
-        As
-        <strong> UX engineer </strong>
-        I build web interfaces, components library and design systems with a special love to CSS.
-        I don’t work with CSS frameworks, I build them.
-      </Text>
-      <Text>
-        I’m also an
-        {' '}
-        <strong>open-source developer</strong>
-        , and in my spare time I do photography and digital art.
-      </Text>
-      <Socials />
+      <motion.div variants={fadeIn} initial="hidden" animate="visible">
+        <Text>
+          As
+          <strong> UX engineer </strong>
+          I build web interfaces, components library and design systems with a special love to CSS.
+          I don’t work with CSS frameworks, I build them.
+        </Text>
+      </motion.div>
+      <motion.div variants={fadeIn} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
+        <Text>
+          I’m also an
+          {' '}
+          <strong>open-source developer</strong>
+          , and in my spare time I do photography and digital art.
+        </Text>
+      </motion.div>
+      <motion.div variants={fadeIn} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
+        <Socials />
+      </motion.div>
     </Stack>
   </Container>
 );
