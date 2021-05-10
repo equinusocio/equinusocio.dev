@@ -9,7 +9,7 @@ import style from './socials.module.css';
 export const Socials = () => (
   <Stack horizontalAlign="start" rowGap="0.36rem" as="address" className={style.Socials}>
     <Text size="small"><b>But there is more...</b></Text>
-    <ul className={style.List}>
+    <Stack as="ul" inline className={style.List} columnGap="1.09rem">
       <li>
         <a href="https://twitter.com/equinusocio" rel="noopener noreferrer" target="_blank" aria-label="Mattia Astorino on Twitter">
           <LogoTwitter aria-hidden="true" role="presentation" />
@@ -35,6 +35,6 @@ export const Socials = () => (
           <LogoCodepen aria-hidden="true" role="presentation" />
         </a>
       </li>
-    </ul>
+    </Stack>
   </Stack>
 );
