@@ -9,8 +9,19 @@ import { motion } from 'framer-motion';
 import style from './hero.module.css';
 
 const fadeIn = {
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: '20%' },
+  visible: (custom: any) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      delay: custom * 0.2,
+    },
+  }),
+  hidden: {
+    opacity: 0,
+    y: '20%',
+    transition: { duration: 0.8 },
+  },
 };
 
 export const Hero = () => (
@@ -51,7 +62,7 @@ export const Hero = () => (
           I don’t work with CSS frameworks, I build them.
         </Text>
       </motion.div>
-      <motion.div variants={fadeIn} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
+      <motion.div custom={2} variants={fadeIn} initial="hidden" animate="visible">
         <Text>
           I’m also an
           {' '}
@@ -59,7 +70,7 @@ export const Hero = () => (
           , and in my spare time I do photography and digital art.
         </Text>
       </motion.div>
-      <motion.div variants={fadeIn} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
+      <motion.div custom={3} variants={fadeIn} initial="hidden" animate="visible">
         <Socials />
       </motion.div>
     </Stack>

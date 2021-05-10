@@ -1,5 +1,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
+    --gradient-color-2: var(--accent-color);
     --global-background: hsl(var(--color-100));
     --global-foreground: hsl(var(--color-10));
 

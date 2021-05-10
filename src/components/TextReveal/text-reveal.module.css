@@ -3,9 +3,14 @@
   --animation-duration: 1.2s;
 
   position: relative;
-  animation-name: clip-text;
   cursor: default;
   display: inline-block;
+  animation-name: clip-text;
+  animation-play-state: paused;
+
+  &[data-text-reveal-is-running='true'] {
+    animation-play-state: running;
+  }
 
   &::after {
     content: '';
@@ -20,6 +25,11 @@
     transform-origin: 0 50%;
     pointer-events: none;
     animation-name: text-revealer;
+    animation-play-state: paused;
+
+    @nest .TextReveal[data-text-reveal-is-running='true']& {
+      animation-play-state: running;
+    }
   }
 }
 
@@ -34,10 +44,12 @@
 
 @keyframes clip-text {
   from {
+    transform: translateX(-20%);
     clip-path: inset(0 100% 0 0);
   }
 
   to {
+    transform: none;
     clip-path: inset(0 0 0 0);
   }
 }

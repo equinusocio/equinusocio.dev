@@ -10,17 +10,12 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Text } from '@/components/Text';
 import { PillsCloud } from '@/components/PillsCloud';
-import { motion } from 'framer-motion';
 import { Slider } from '@/components/Slider';
 import { useInViewRef } from 'rooks';
-
-const fadeIn = {
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: '20%' },
-};
+import { TextReveal } from '@/components/TextReveal';
 
 const Home = () => {
-  const [whatIDoRef, whatIDoRefVisible] = useInViewRef();
+  const [skillsRef, skillsRefInView] = useInViewRef();
 
   return (
     <PageLayout showHeader={false}>
@@ -32,14 +27,13 @@ const Home = () => {
       </Section>
 
       <Section bg="bg-2.svg" verticalAlign="center">
-
         <Container>
-          <div ref={whatIDoRef}>
+          <div ref={skillsRef}>
             <Stack verticalAlign="start" columnGap="min(10vw, 10.90rem)">
               <Stack column verticalAlign="center" rowGap="1.81rem">
-                <motion.div variants={fadeIn} animate={whatIDoRefVisible && 'visible'} initial={false} transition={{ delay: 0.3 }}>
-                  <Heading as="h2">What I do</Heading>
-                </motion.div>
+                <Heading as="h2">
+                  <TextReveal isRunning={skillsRefInView}>What I do</TextReveal>
+                </Heading>
                 <Text>
                   There is a gap between designers and front-end developers, where we find design scalability,
                   accessibility, semantic HTML, UI development, interactions and animations.
