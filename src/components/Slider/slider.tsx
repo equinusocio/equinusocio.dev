@@ -15,7 +15,7 @@ export const Slider = ({
   rowGap = '1.09rem',
   columnGap = '1.09rem',
   columnSize = 'max(300px, 83vw)',
-  desktopColumnSize = '28ch',
+  desktopColumnSize = '23ch',
   ...props
 }: ISliderProps) => {
   const dynamicStyle: CSSProperties = {

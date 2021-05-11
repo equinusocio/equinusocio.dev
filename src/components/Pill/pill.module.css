@@ -1,6 +1,4 @@
 .Pill {
-  --shadow-color: var(--color-100);
-
   border-radius: 1rem 1rem 1rem 1rem / 1.11rem 1.11rem 1.11rem 1.11rem;
   background-color: var(--pill-background, hsl(var(--color-70)));
   padding: 0.36rem 0.72rem;
