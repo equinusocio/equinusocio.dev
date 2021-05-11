@@ -1,34 +1,38 @@
+@import 'media.css';
+
 .TextReveal {
   --animation-delay: 0;
   --animation-duration: 1.2s;
 
-  position: relative;
-  cursor: default;
-  display: inline-block;
-  animation-name: clip-text;
-  animation-play-state: paused;
-
-  &[data-text-reveal-is-running='true'] {
-    animation-play-state: running;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--c, hsl(var(--accent-color-alt)));
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    pointer-events: none;
-    animation-name: text-revealer;
+  @media (--allow-motion) {
+    position: relative;
+    cursor: default;
+    display: inline-block;
+    animation-name: clip-text;
     animation-play-state: paused;
 
-    @nest .TextReveal[data-text-reveal-is-running='true']& {
+    &[data-text-reveal-is-running='true'] {
       animation-play-state: running;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--c, hsl(var(--accent-color-alt)));
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation-name: text-revealer;
+      animation-play-state: paused;
+
+      @nest .TextReveal[data-text-reveal-is-running='true']& {
+        animation-play-state: running;
+      }
     }
   }
 }

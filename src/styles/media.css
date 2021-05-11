@@ -27,4 +27,4 @@
 
 /* Motion Media Queries */
 
-@custom-media --no-motion       (prefers-reduced-motion: reduce);
+@custom-media --allow-motion       (prefers-reduced-motion: no-preference);
