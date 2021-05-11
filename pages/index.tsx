@@ -14,12 +14,14 @@ import { Slider } from '@/components/Slider';
 import { useInViewRef } from 'rooks';
 import { TextReveal } from '@/components/TextReveal';
 import { GradientCard } from '@/components/GradientCard';
+import { getProjects } from '@/core/api/selectors';
 
-const Home = () => {
+const Home = ({ projects }: Record<string, Record<string, any>[]>) => {
   const [skillsRef, skillsRefInView] = useInViewRef();
 
   return (
     <PageLayout showHeader={false}>
+
       <Section bg="bg-1.svg" accent isFirst>
         <div>
           <Header />
@@ -62,19 +64,30 @@ const Home = () => {
         </Container>
 
         <Slider>
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
-          <GradientCard url="/" color1="red" color2="blue" label="LABEL" title="TITLE" text="text" />
+          {projects.map(item => (
+            <GradientCard
+              url={item.url}
+              key={item.id}
+              color1={item.background[0]}
+              color2={item.background[1]}
+              label={item.label}
+              title={item.title}
+              text={item.text.content[0].content[0].value}
+            />
+          ))}
         </Slider>
       </Section>
     </PageLayout>
   );
 };
 
-export default Home;
+export const getStaticProps = async () => {
+  const projects = await getProjects();
 
+  return {
+    props: { projects },
+    revalidate: 120,
+  };
+};
+
+export default Home;

@@ -8,10 +8,6 @@
     z-index: 0;
     min-height: 120vh;
     padding: 3.63rem 0;
-
-    & > * {
-      flex-grow: 1;
-    }
   }
 
   &[data-section-is-first='true'] {

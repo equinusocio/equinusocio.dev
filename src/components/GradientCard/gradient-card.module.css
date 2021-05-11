@@ -1,4 +1,6 @@
 .GradientCard {
+  --heading-foreground: hsl(var(--color-10));
+
   display: flex;
   flex-direction: column;
   aspect-ratio: 1/1;
@@ -32,10 +34,6 @@
 .Content {
   padding: 0.72rem 1.09rem;
   pointer-events: none;
-}
-
-.Title {
-  color: hsl(var(--color-10));
 }
 
 .Label {

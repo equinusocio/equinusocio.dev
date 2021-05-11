@@ -40,8 +40,8 @@ export const GradientCard = ({
       >
         <Stack className={style.Content} rowGap="0.72rem">
           <div className={style.Title}>
-            <Text size="small" className={style.Label}>{label}</Text>
-            <Heading as="h4" semantic={false} className={style.Title}>{title}</Heading>
+            <Text size="small" className={style.Label} weight="bold">{label}</Text>
+            <Heading as="h5" semantic={false}>{title}</Heading>
           </div>
           <Text size="small">{text}</Text>
         </Stack>
