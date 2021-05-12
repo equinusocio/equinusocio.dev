@@ -15,8 +15,9 @@ import { useInViewRef } from 'rooks';
 import { TextReveal } from '@/components/TextReveal';
 import { GradientCard } from '@/components/GradientCard';
 import { getProjects } from '@/core/api/selectors';
+import { ProjectType } from '@/core/api/selectors/getProjects';
 
-const Home = ({ projects }: Record<string, Record<string, any>[]>) => {
+const Home = ({ projects }: Record<string, ProjectType[]>) => {
   const [skillsRef, skillsRefInView] = useInViewRef();
 
   return (
@@ -73,7 +74,7 @@ const Home = ({ projects }: Record<string, Record<string, any>[]>) => {
                 color2={item.background[1]}
                 label={item.label}
                 title={item.title}
-                text={item.text.content[0].content[0].value}
+                text={item.body}
               />
             ))}
           </Slider>

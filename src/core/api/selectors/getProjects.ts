@@ -7,7 +7,8 @@ export type ProjectType = {
   label: string;
   title: string;
   background: string[];
-  body: Record<string, any>;
+  body: string;
+  url: string;
 }
 
 export type ProjectsResponse = {
@@ -16,12 +17,15 @@ export type ProjectsResponse = {
 
 export async function getProjects() {
   try {
-    const projects = await client.getEntries<Record<any, string>>({
+    const projects = await client.getEntries<any>({
       content_type: 'project',
     });
 
+    // console.log(projects.items[0].fields.text.content[0].content[0].value);
+
     return projects.items.map(prj => ({
       id: prj.sys.id,
+      body: prj.fields.text.content[0].content[0].value,
       ...prj.fields,
     }));
   } catch {
