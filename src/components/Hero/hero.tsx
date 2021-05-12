@@ -5,7 +5,9 @@ import { Stack } from '@/components/Stack';
 import { Text } from '@/components/Text';
 import { Socials } from '@/components/Socials';
 import { TextReveal } from '@/components/TextReveal';
-import { motion, useReducedMotion } from 'framer-motion';
+import {
+  motion, LazyMotion, domAnimation, m, useReducedMotion,
+} from 'framer-motion';
 import style from './hero.module.css';
 
 const fadeIn = {
@@ -60,25 +62,27 @@ export const Hero = () => {
             <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
           </TextReveal>
         </Heading>
-        <motion.div variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
-          <Text>
-            As
-            <strong> UX engineer </strong>
-            I build web interfaces, components library and design systems with a special love to CSS.
-            I don’t work with CSS frameworks, I build them.
-          </Text>
-        </motion.div>
-        <motion.div custom={2} variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
-          <Text>
-            I’m also an
-            {' '}
-            <strong>open-source developer</strong>
-            , and in my spare time I do photography and digital art.
-          </Text>
-        </motion.div>
-        <motion.div custom={3} variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
-          <Socials />
-        </motion.div>
+        <LazyMotion features={domAnimation}>
+          <m.div variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
+            <Text>
+              As
+              <strong> UX engineer </strong>
+              I build web interfaces, components library and design systems with a special love to CSS.
+              I don’t work with CSS frameworks, I build them.
+            </Text>
+          </m.div>
+          <m.div custom={2} variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
+            <Text>
+              I’m also an
+              {' '}
+              <strong>open-source developer</strong>
+              , and in my spare time I do photography and digital art.
+            </Text>
+          </m.div>
+          <m.div custom={3} variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate="visible">
+            <Socials />
+          </m.div>
+        </LazyMotion>
       </Stack>
     </Container>
   );
