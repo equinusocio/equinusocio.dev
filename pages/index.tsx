@@ -54,28 +54,30 @@ const Home = ({ projects }: Record<string, Record<string, any>[]>) => {
       </Section>
 
       <Section bg="bg-3.svg" verticalAlign="start" columns={1}>
-        <Container>
-          <Stack>
-            <Heading as="h2">Public Artifacts</Heading>
-            <Stack horizontalAlign="center">
-              <Text>My latest public projects from employers and open-source</Text>
+        <Stack rowGap="3rem">
+          <Container>
+            <Stack>
+              <Heading as="h2">Public Artifacts</Heading>
+              <Stack inline>
+                <Text>My latest public projects from employers and open-source</Text>
+              </Stack>
             </Stack>
-          </Stack>
-        </Container>
+          </Container>
 
-        <Slider>
-          {projects.map(item => (
-            <GradientCard
-              url={item.url}
-              key={item.id}
-              color1={item.background[0]}
-              color2={item.background[1]}
-              label={item.label}
-              title={item.title}
-              text={item.text.content[0].content[0].value}
-            />
-          ))}
-        </Slider>
+          <Slider>
+            {projects.map(item => (
+              <GradientCard
+                url={item.url}
+                key={item.id}
+                color1={item.background[0]}
+                color2={item.background[1]}
+                label={item.label}
+                title={item.title}
+                text={item.text.content[0].content[0].value}
+              />
+            ))}
+          </Slider>
+        </Stack>
       </Section>
     </PageLayout>
   );

@@ -1,13 +1,11 @@
 @import 'media.css';
 
 .Slider {
-  --mobileGap: 1.09rem;
-
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: var(--columnSize);
   gap: var(--mobileGap);
-  padding-inline: var(--mobileGap);
+  padding-inline: 0.8rem;
   -webkit-overflow-scrolling: touch;
   padding-block: 0 var(--mobileGap) var(--mobileGap) var(--mobileGap);
   overflow-x: auto;
@@ -37,7 +35,6 @@
   @media (--from-small) {
     grid-auto-flow: unset;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--desktopColumnSize), 100%), 1fr));
-    padding: 0;
     max-width: 63.63rem;
     margin: 0 auto;
     width: 100%;

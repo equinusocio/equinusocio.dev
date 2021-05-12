@@ -1,67 +1,72 @@
 .Pill {
   border-radius: 1rem 1rem 1rem 1rem / 1.11rem 1.11rem 1.11rem 1.11rem;
-  background-color: var(--pill-background, hsl(var(--color-70)));
+  background-color: var(--pill-background);
   padding: 0.36rem 0.72rem;
   font-weight: 700;
-  color: var(--c, hsl(var(--color-0)));
+  color: var(--pill-foreground);
   display: inline-flex;
   white-space: nowrap;
   align-items: center;
   gap: 0.36rem;
   cursor: default;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--pill-foreground);
+    color: var(--pill-background);
+  }
+
   &[data-pill-color='yellow'] {
-    background-color: #fff27d;
-    color: #574e00;
+    --pill-foreground: #574e00;
+    --pill-background: #fff27d;
   }
 
   &[data-pill-color='green'] {
-    background-color: #9cffc4;
-    color: #004f1f;
+    --pill-foreground: #004f1f;
+    --pill-background: #9cffc4;
   }
 
   &[data-pill-color='black'] {
-    background-color: hsl(var(--color-80));
-    color: #fff;
+    --pill-foreground: hsl(var(--color-80));
+    --pill-background: hsl(var(--color-10));
   }
 
   &[data-pill-color='pink'] {
-    background-color: #fff0f9;
-    color: #c90079;
+    --pill-foreground: #c90079;
+    --pill-background: #fff0f9;
   }
 
   &[data-pill-color='grey'] {
-    background-color: hsl(var(--color-10));
-    color: hsl(var(--accent-color));
+    --pill-foreground: hsl(var(--accent-color));
+    --pill-background: hsl(var(--color-10));
   }
 
   &[data-pill-color='lime'] {
-    background-color: #dbfe90;
-    color: #3a5500;
+    --pill-foreground: #3a5500;
+    --pill-background: #dbfe90;
   }
 
   &[data-pill-color='orange'] {
-    background-color: #ffd79b;
-    color: #663d00;
+    --pill-foreground: #663d00;
+    --pill-background: #ffd79b;
   }
 
   &[data-pill-color='violet'] {
-    background-color: #ffc8f9;
-    color: #970088;
+    --pill-foreground: #970088;
+    --pill-background: #ffc8f9;
   }
 
   &[data-pill-color='blue'] {
-    background-color: #b0e3ff;
-    color: #003f62;
+    --pill-foreground: #003f62;
+    --pill-background: #b0e3ff;
   }
 
   &[data-pill-color='cyan'] {
-    background-color: #9dfbf6;
-    color: #005954;
+    --pill-foreground: #005954;
+    --pill-background: #9dfbf6;
   }
 
   &[data-pill-color='purple'] {
-    background-color: #f1e6fd;
-    color: #8606ff;
+    --pill-foreground: #8606ff;
+    --pill-background: #f1e6fd;
   }
 }

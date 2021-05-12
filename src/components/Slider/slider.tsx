@@ -7,6 +7,7 @@ interface ISliderProps extends HTMLAttributes<HTMLElement> {
   columnGap?: string;
   columnSize?: string;
   desktopColumnSize?: string;
+  mobileGap?: string;
 }
 
 export const Slider = ({
@@ -14,11 +15,13 @@ export const Slider = ({
   className,
   rowGap = '1.09rem',
   columnGap = '1.09rem',
-  columnSize = 'max(300px, 83vw)',
+  columnSize = 'max(300px, 88vw)',
+  mobileGap = '0.8rem',
   desktopColumnSize = '23ch',
   ...props
 }: ISliderProps) => {
   const dynamicStyle: CSSProperties = {
+    '--mobileGap': mobileGap,
     '--rGap': rowGap,
     '--cGap': columnGap,
     '--columnSize': columnSize,
