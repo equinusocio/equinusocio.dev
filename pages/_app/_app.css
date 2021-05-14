@@ -1,6 +1,6 @@
 @import 'media.css';
 
-@help-media-queries;
+/* @help-media-queries; */
 
 html {
   font-size: 137.5%;
@@ -16,7 +16,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  -webkit-tap-highlight-color: hsl(env(--primary-100), 0.2);
+  -webkit-tap-highlight-color: hsl(var(--accent-color) / 20%);
 }
 
 * {

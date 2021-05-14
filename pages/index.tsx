@@ -66,21 +66,20 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
           </Stack>
         </Container>
 
-        <FadeIn custom={{ delay: 0.1 }}>
-          <Slider>
-            {projects.map(item => (
+        <Slider>
+          {projects.map((item, i) => (
+            <FadeIn key={item.id} custom={{ delay: i * 0.1 }}>
               <GradientCard
                 url={item.url}
-                key={item.id}
                 color1={item.background[0]}
                 color2={item.background[1]}
                 label={item.label}
                 title={item.title}
                 text={item.body}
               />
-            ))}
-          </Slider>
-        </FadeIn>
+            </FadeIn>
+          ))}
+        </Slider>
       </Stack>
     </Section>
   </PageLayout>

@@ -4,6 +4,10 @@
   padding: 2.54rem 0;
   position: relative;
 
+  &:last-child {
+    padding-bottom: 4.54rem;
+  }
+
   @media (--from-medium) {
     z-index: 0;
     min-height: 120vh;

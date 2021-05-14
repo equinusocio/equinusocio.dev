@@ -40,7 +40,12 @@ export const FadeIn = ({
 
   return (
     <LazyMotion features={domAnimation}>
-      <m.div ref={componentRef} variants={fadeIn} initial={shouldReduceMotion ? 'visible' : 'hidden'} animate={controls}>
+      <m.div
+        ref={componentRef}
+        variants={fadeIn}
+        initial={shouldReduceMotion ? 'visible' : 'hidden'}
+        animate={controls}
+      >
         {children}
       </m.div>
     </LazyMotion>

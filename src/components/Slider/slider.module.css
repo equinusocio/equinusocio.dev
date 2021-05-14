@@ -9,6 +9,7 @@
   -webkit-overflow-scrolling: touch;
   padding-block: 0 var(--mobileGap) var(--mobileGap) var(--mobileGap);
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scroll-padding: var(--mobileGap);
