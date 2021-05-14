@@ -6,12 +6,14 @@ import style from './fade-in.module.css';
 export interface IFadeInProps extends HTMLAttributes<HTMLElement> {
   delay?: string;
   duration?: string;
+  onlyDesktop?: boolean;
 }
 
 export const FadeIn = ({
   children,
   delay,
   duration = '0.8s',
+  onlyDesktop,
 }: IFadeInProps) => {
   const [componentRef, inView] = useInViewRef();
 
@@ -21,7 +23,13 @@ export const FadeIn = ({
   };
 
   return (
-    <div data-fade-in-is-running={inView} className={style.FadeIn} style={dynamicStyle} ref={componentRef}>
+    <div
+      data-fade-in-is-running={inView}
+      data-fade-in-only-desktop={Boolean(onlyDesktop)}
+      className={style.FadeIn}
+      style={dynamicStyle}
+      ref={componentRef}
+    >
       {children}
     </div>
   );

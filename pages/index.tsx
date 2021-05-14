@@ -68,7 +68,7 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
 
         <Slider>
           {projects.map((item, i) => (
-            <FadeIn key={item.id} delay={`${i * 0.1}s`}>
+            <FadeIn key={item.id} onlyDesktop delay={`${i * 0.1}s`}>
               <GradientCard
                 url={item.url}
                 color1={item.background[0]}
