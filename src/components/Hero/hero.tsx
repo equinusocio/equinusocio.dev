@@ -51,7 +51,7 @@ export const Hero = () => (
         </Text>
       </FadeIn>
 
-      <FadeIn custom={{ delay: 0.2 }}>
+      <FadeIn delay="0.2s">
         <Text>
           I’m also an
           {' '}
@@ -60,7 +60,7 @@ export const Hero = () => (
         </Text>
       </FadeIn>
 
-      <FadeIn custom={{ delay: 0.4 }}>
+      <FadeIn delay="0.4s">
         <Socials />
       </FadeIn>
     </Stack>

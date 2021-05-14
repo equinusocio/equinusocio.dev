@@ -1,0 +1,30 @@
+@import 'media.css';
+
+.FadeIn {
+
+  @media (--allow-motion) {
+    animation-name: fadeIn;
+    animation-duration: var(--duration, 0.8s);
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-delay: var(--delay, 0);
+    animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  &[data-fade-in-is-running='true'] {
+    animation-play-state: running;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(var(--fromX, 0), var(--fromY, 20px));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(var(--toX, 0), var(--toY, 0));
+  }
+}

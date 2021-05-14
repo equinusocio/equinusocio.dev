@@ -41,7 +41,7 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
                 Where UX engineering happens.
               </Text>
             </FadeIn>
-            <FadeIn custom={{ delay: 0.2 }}>
+            <FadeIn delay="0.2s">
               <Text>
                 <strong>This is the front of the front-end.</strong>
               </Text>
@@ -68,7 +68,7 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
 
         <Slider>
           {projects.map((item, i) => (
-            <FadeIn key={item.id} custom={{ delay: i * 0.1 }}>
+            <FadeIn key={item.id} delay={`${i * 0.1}s`}>
               <GradientCard
                 url={item.url}
                 color1={item.background[0]}
