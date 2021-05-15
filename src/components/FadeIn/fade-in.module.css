@@ -3,13 +3,23 @@
 .FadeIn {
 
   @media (--allow-motion) {
-    animation-name: fadeIn;
     animation-duration: var(--duration, 0.8s);
     animation-iteration-count: 1;
     animation-play-state: paused;
     animation-fill-mode: both;
     animation-delay: var(--delay, 0);
     animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+
+    &[data-fade-in-only-desktop='false'] {
+      animation-name: fadeIn;
+    }
+
+    &[data-fade-in-only-desktop='true'] {
+
+      @media (--from-medium) {
+        animation-name: fadeIn;
+      }
+    }
   }
 
   &[data-fade-in-is-running='true'] {

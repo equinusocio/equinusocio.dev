@@ -21,10 +21,8 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
   <PageLayout showHeader={false}>
 
     <Section bg="bg-1.svg" accent isFirst>
-      <div>
-        <Header />
-        <Hero />
-      </div>
+      <Header />
+      <Hero />
     </Section>
 
     <Section bg="bg-2.svg" verticalAlign="center">

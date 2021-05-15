@@ -21,8 +21,6 @@ export async function getProjects() {
       content_type: 'project',
     });
 
-    // console.log(projects.items[0].fields.text.content[0].content[0].value);
-
     return projects.items.map(prj => ({
       id: prj.sys.id,
       body: prj.fields.text.content[0].content[0].value,
