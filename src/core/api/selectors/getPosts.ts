@@ -5,7 +5,7 @@ import { EntriesResponse } from './getPost';
 
 export async function getPosts() {
   try {
-    const posts = await client.getEntries<EntriesResponse>({
+    const posts = await client.getEntries<Record<any, EntriesResponse>>({
       content_type: 'blogPost',
     });
 
