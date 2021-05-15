@@ -16,12 +16,16 @@
   transition: opacity 800ms ease-out;
   transition-delay: 500ms;
   opacity: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: hsl(var(--accent-color-alt));
 
-  & circle {
+  /* & circle {
     transform: scale(0.5);
     transform-origin: 50%;
     fill: hsl(var(--accent-color-alt));
-  }
+  } */
 
   /*
   &[data-size='big'] {

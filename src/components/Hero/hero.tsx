@@ -13,8 +13,10 @@ export const Hero = () => (
     <Text size="small" className={style.SideText}>
       <TextReveal>
         <Text as="span" color="hsl(var(--accent-color-alt))">EQUINUSOCIO</Text>
-        {' '}
-        — FOR — FRIENDS
+        <span aria-hidden="true"> — </span>
+        FOR
+        <span aria-hidden="true"> — </span>
+        FRIENDS
       </TextReveal>
     </Text>
 
@@ -33,12 +35,12 @@ export const Hero = () => (
     </picture>
 
     <Stack>
-      <Heading as="h1" className={style.Title} arial-label="Hi, my name is Mattia">
+      <Heading as="h1" className={style.Title}>
         <TextReveal>
           Hi, my name is
           <br aria-hidden="true" />
           {' '}
-          <img className={style.Name} width="490" height="130" src="/mattia.svg" alt="Mattia" />
+          <img className={style.Name} width="490" height="130" src="/mattia.svg" aria-label="Mattia" alt="Mattia" />
         </TextReveal>
       </Heading>
 

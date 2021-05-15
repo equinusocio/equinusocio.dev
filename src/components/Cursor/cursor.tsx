@@ -50,19 +50,15 @@ export const Cursor = () => {
         <motion.div
           className={style.Ball}
           animate={{
-            x: clientX ? clientX - 50 : 0,
-            y: clientY ? clientY - 50 : 0,
+            x: clientX ? clientX - 16 : 0,
+            y: clientY ? clientY - 16 : 0,
             opacity: 0.2,
-            scale: isHovering ? 2 : 1,
+            scale: isHovering ? 1.5 : 1,
           }}
           transition={{
             ease: [0.22, 1, 0.36, 1],
           }}
-        >
-          <svg height="100" width="100">
-            <circle cx="50" cy="50" r="25" strokeWidth="0" />
-          </svg>
-        </motion.div>
+        />
       )}
     </div>
   );
