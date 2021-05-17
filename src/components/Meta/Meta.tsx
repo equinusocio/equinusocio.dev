@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
-import { GoogleFonts } from 'next-google-fonts';
+// import { GoogleFonts } from 'next-google-fonts';
 
 interface IMetaProps {
   description?: string;
@@ -24,7 +24,6 @@ export const Meta = ({
   children,
 }: IMetaProps) => (
   <Fragment>
-    <GoogleFonts href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" />
     <Head>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />

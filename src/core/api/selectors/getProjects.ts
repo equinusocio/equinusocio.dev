@@ -19,6 +19,7 @@ export async function getProjects() {
   try {
     const projects = await client.getEntries<any>({
       content_type: 'project',
+      limit: 8,
     });
 
     return projects.items.map(prj => ({
