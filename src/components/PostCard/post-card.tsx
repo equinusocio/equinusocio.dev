@@ -30,7 +30,7 @@ export const PostCard = ({
       <a target={externalUrl && '_blank'}>
         <Stack rowGap="1.45rem" horizontalAlign="start">
           <Stack rowGap="0.72rem">
-            <Text as="span">
+            <Text as="span" size="small">
               <time dateTime={new Date(date).toISOString()}>
                 {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(date))}
               </time>

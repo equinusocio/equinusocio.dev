@@ -5,8 +5,9 @@ import { EntriesResponse } from './getPost';
 
 export async function getPosts() {
   try {
-    const posts = await client.getEntries<Record<any, EntriesResponse>>({
+    const posts = await client.getEntries<Record<'any', EntriesResponse>>({
       content_type: 'blogPost',
+      order: '-sys.createdAt',
     });
 
     return posts.items.map(post => ({
