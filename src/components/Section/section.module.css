@@ -8,7 +8,7 @@
   --global-foreground: hsl(var(--color-0));
 
   color: var(--global-foreground);
-  background-color: hsl(var(--accent-color));
+  background-color: var(--section-background);
 
   &:last-child {
     padding-bottom: calc(env(safe-area-inset-bottom) + 5rem);
@@ -22,7 +22,6 @@
 
   &[data-section-is-first='true'] {
     min-height: 100vh;
-    background-image: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
 
     @media (--from-small) {
       padding-top: 0;
@@ -32,7 +31,7 @@
   &[data-section-accent='true'] {
     --heading-foreground: hsl(var(--color-0));
 
-    background-image: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
+    background-image: var(--section-gradient-background);
   }
 }
 

@@ -27,6 +27,14 @@
     justify-content: flex-end;
     position: relative;
     inset: unset;
+
+
+    &[data-header-sticky='true'] {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
+      background-color: var(--header-background);
+    }
   }
 
   & a {

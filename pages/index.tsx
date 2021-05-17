@@ -18,7 +18,7 @@ import { ProjectType } from '@/core/api/selectors/getProjects';
 import { FadeIn } from '@/components/FadeIn';
 
 const Home = ({ projects }: Record<string, ProjectType[]>) => (
-  <PageLayout showHeader={false}>
+  <PageLayout>
 
     <Section bg="bg-1.svg" accent isFirst>
       <Header />

@@ -4,4 +4,11 @@
 
   /* Heading */
   --heading-foreground: hsl(var(--color-80));
+
+  /* Section */
+  --section-background: hsl(var(--accent-color));
+  --section-gradient-background: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
+
+  /* Header */
+  --header-background: hsl(var(--accent-color) / 70%);
 }

@@ -15,6 +15,11 @@
     animation-direction: alternate;
   }
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--pill-foreground);
+    color: var(--pill-background);
+  }
+
   &[data-pill-color='yellow'] {
     --pill-foreground: #574e00;
     --pill-background: #fff27d;
