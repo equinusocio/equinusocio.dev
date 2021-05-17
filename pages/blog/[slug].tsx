@@ -16,7 +16,7 @@ const Post = ({ title, body }: PostType) => (
 export const getStaticPaths = async () => {
   const posts = await getPosts();
 
-  const paths = posts.map((post: PostType) => ({
+  const paths = posts.map((post: Partial<PostType>) => ({
     params: {
       slug: post.slug,
     },
