@@ -1,0 +1,32 @@
+@import 'media.css';
+
+.PostCard {
+  position: relative;
+  padding: 1.45rem 1.45rem 1.45rem 0;
+  cursor: default;
+
+  & a {
+    color: var(--global-foreground);
+    text-decoration: none;
+  }
+
+  &::before {
+    counter-increment: post-counter;
+    position: absolute;
+    top: 0;
+    left: -2.8rem;
+    z-index: -1;
+    display: block;
+    color: var(--color-40);
+    opacity: 0.1;
+    line-height: 1;
+    font-size: 7rem;
+    font-weight: 100;
+    content: counters(post-counter, '.', decimal-leading-zero);
+  }
+}
+
+
+.Abstract {
+  opacity: 0.8;
+}
