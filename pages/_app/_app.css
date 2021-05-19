@@ -60,3 +60,7 @@ p {
     max-width: 34ch;
   }
 }
+
+[role='list'] {
+  list-style: none;
+}

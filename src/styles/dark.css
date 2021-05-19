@@ -9,7 +9,7 @@
 
     /* Section */
     --section-background: hsl(var(--color-100));
-    --section-gradient-background: radial-gradient(circle at top, #120146, hsl(var(--color-100)));
+    --section-gradient-background: radial-gradient(circle at top, #120146, hsl(var(--color-100)) 65%);
 
     /* Header */
     --header-background: hsl(var(--color-100) / 90%);

@@ -26,7 +26,7 @@ export const PostCard = ({
   ...props
 }: IPostCardProps) => (
   <article className={clsx(style.PostCard, className)} {...props}>
-    <Link href={!externalUrl ? `/blog/${encodeURIComponent(slug)}` : externalUrl}>
+    <Link href={externalUrl ?? `/blog/${encodeURIComponent(slug)}`}>
       <a target={externalUrl && '_blank'}>
         <Stack rowGap="1.45rem" horizontalAlign="start">
           <Stack rowGap="0.72rem">
