@@ -1,0 +1,18 @@
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+@custom-selector :--blocks h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr;
+
+.Prose {
+  & > :--blocks {
+    max-width: unset;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  & > :--headings {
+    margin-bottom: 0;
+  }
+
+  & > :--headings + p {
+    margin-top: calc(2rem / 2);
+  }
+}

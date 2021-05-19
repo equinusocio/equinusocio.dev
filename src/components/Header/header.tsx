@@ -25,7 +25,7 @@ export const Header = ({
           <a aria-current={router.asPath === '/' ? 'page' : undefined}><Text as="span" size="small" weight="bold">HOME</Text></a>
         </Link>
         <Link href="/blog">
-          <a aria-current={router.asPath === '/blog/' ? 'page' : undefined}><Text as="span" size="small" weight="bold">STORIES</Text></a>
+          <a aria-current={router.asPath.includes('/blog/') ? 'page' : undefined}><Text as="span" size="small" weight="bold">STORIES</Text></a>
         </Link>
       </Stack>
       <div className={style.Separator} />
