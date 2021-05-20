@@ -13,7 +13,7 @@ const Blog = ({ posts }: {posts: PostType[]}) => (
   <PageLayout>
     <Section isFirst accent>
       <Header isSticky />
-      <Container size="medium" style={{ 'counter-reset': 'post-counter' }}>
+      <Container size="medium" style={{ counterReset: 'post-counter' }}>
         <Stack as="ol" rowGap="2rem" role="list">
           {posts.map((item: PostType, i: number) => (
             <li key={item.id}>

@@ -29,7 +29,7 @@ export const FadeIn = ({
 
   return (
     <div
-      data-fade-in-is-running={intersection && intersection.intersectionRatio === 1}
+      data-fade-in-is-running={intersection?.isIntersecting}
       data-fade-in-only-desktop={Boolean(onlyDesktop)}
       className={style.FadeIn}
       style={dynamicStyle}

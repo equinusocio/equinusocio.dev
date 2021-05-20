@@ -3,6 +3,7 @@
 .Section {
   padding: 2.54rem 0;
   position: relative;
+  content-visibility: auto;
 
   --heading-foreground: hsl(var(--color-0));
   --global-foreground: hsl(var(--color-0));
@@ -22,6 +23,7 @@
 
   &[data-section-is-first='true'] {
     min-height: 100vh;
+    content-visibility: unset;
 
     @media (--from-small) {
       padding-top: 0;

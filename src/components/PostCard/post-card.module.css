@@ -2,7 +2,6 @@
 
 .PostCard {
   position: relative;
-  padding: 1.45rem;
   cursor: default;
 
 
@@ -11,6 +10,7 @@
   }
 
   & a {
+    padding: 1.45rem;
     display: block;
     color: var(--global-foreground);
     text-decoration: none;
@@ -31,7 +31,7 @@
     opacity: 0.1;
     line-height: 1;
     font-size: 7rem;
-    font-weight: 50;
+    font-weight: 100;
     transition: all 200ms;
     content: counters(post-counter, '.', decimal-leading-zero);
 

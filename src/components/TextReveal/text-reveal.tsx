@@ -18,7 +18,7 @@ export const TextReveal = ({
   const intersection = useIntersection(componentRef, {
     root: null,
     rootMargin: '0px',
-    threshold: 1,
+    threshold: 0,
   });
 
   const dynamicStyle: CSSProperties = {
@@ -28,9 +28,9 @@ export const TextReveal = ({
   return (
     <span
       ref={componentRef}
-      data-text-reveal-is-running={intersection && intersection.intersectionRatio === 1}
+      className={styles.TextReveal}
+      data-text-reveal-is-running={intersection?.isIntersecting}
       style={{ ...style, ...dynamicStyle }}
-      className={clsx(styles.TextReveal, className)}
       {...props}
     >
       {children}

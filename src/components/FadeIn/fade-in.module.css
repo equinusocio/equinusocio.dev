@@ -20,10 +20,10 @@
         animation-name: fadeIn;
       }
     }
-  }
 
-  &[data-fade-in-is-running='true'] {
-    animation-play-state: running;
+    &[data-fade-in-is-running='true'] {
+      animation-play-state: running;
+    }
   }
 }
 

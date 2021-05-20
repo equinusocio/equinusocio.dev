@@ -9,16 +9,18 @@ export interface IPageLayoutProps extends HTMLAttributes<HTMLElement> {
 
 export const PageLayout = ({
   children,
-  hero,
   header,
+  hero,
   ...props
 }: IPageLayoutProps) => (
   <main className={style.PageLayout} {...props}>
     <Cursor />
+    {(header || hero) && (
     <section>
       {header}
       {hero}
     </section>
+    )}
     {children}
   </main>
 );

@@ -4,6 +4,12 @@
   --animation-delay: 0;
   --animation-duration: 1.2s;
 
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: 1;
+  animation-duration: var(--animation-duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
   @media (--allow-motion) {
     position: relative;
     cursor: default;
@@ -14,36 +20,7 @@
     &[data-text-reveal-is-running='true'] {
       animation-play-state: running;
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--c, hsl(var(--accent-color-alt)));
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-      pointer-events: none;
-      animation-name: text-revealer;
-      animation-play-state: paused;
-
-      @nest .TextReveal[data-text-reveal-is-running='true']& {
-        animation-play-state: running;
-      }
-    }
   }
-}
-
-.TextReveal,
-.TextReveal::after {
-  animation-delay: var(--animation-delay, 2s);
-  animation-iteration-count: 1;
-  animation-duration: var(--animation-duration, 800ms);
-  animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 @keyframes clip-text {
@@ -57,24 +34,3 @@
     clip-path: inset(0 0 0 0);
   }
 }
-@keyframes text-revealer {
-  0%,
-  50% {
-    transform-origin: 0 50%;
-  }
-
-  60%,
-  100% {
-    transform-origin: 100% 50%;
-  }
-
-
-  60% {
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform: scaleX(0);
-  }
-}
-
