@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React, { CSSProperties, HTMLAttributes } from 'react';
 import { useIntersection } from 'react-use';
 import styles from './text-reveal.module.css';
