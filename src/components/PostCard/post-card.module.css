@@ -2,13 +2,22 @@
 
 .PostCard {
   position: relative;
-  padding: 1.45rem 1.45rem 1.45rem 0;
+  padding: 1.45rem;
   cursor: default;
-  display: block;
+
+
+  &:where(:hover, :focus-within) {
+    background-image: linear-gradient(to bottom right, hsl(var(--color-100) / 20%), hsl(var(--color-0) / 0%));
+  }
 
   & a {
+    display: block;
     color: var(--global-foreground);
     text-decoration: none;
+
+    & > * {
+      pointer-events: none;
+    }
   }
 
   &::before {
@@ -22,8 +31,15 @@
     opacity: 0.1;
     line-height: 1;
     font-size: 7rem;
-    font-weight: 100;
+    font-weight: 50;
     content: counters(post-counter, '.', decimal-leading-zero);
+
+    @media (--from-medium) {
+      left: unset;
+      top: unset;
+      bottom: 0;
+      right: -2.8rem;
+    }
   }
 }
 

@@ -34,6 +34,7 @@ body {
   animation: curs 500ms infinite;
   color: var(--global-foreground);
   font-family: system-ui, sans-serif;
+  cursor: crosshair;
 }
 
 *:focus {
@@ -63,4 +64,5 @@ p {
 
 [role='list'] {
   list-style: none;
+  padding: 0;
 }
