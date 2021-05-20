@@ -4,6 +4,7 @@
   position: relative;
   padding: 1.45rem 1.45rem 1.45rem 0;
   cursor: default;
+  display: block;
 
   & a {
     color: var(--global-foreground);
