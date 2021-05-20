@@ -2,13 +2,24 @@ import { motion } from 'framer-motion';
 import React, {
   useCallback, useEffect, useState,
 } from 'react';
-import { useMouse } from 'rooks';
 
 import style from './cursor.module.css';
 
 export const Cursor = () => {
-  const { clientX, clientY } = useMouse();
+  const ref = React.useRef(null);
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState<boolean>(false);
+
+  const onMouseMove = useCallback(
+    (e) => {
+      setCoords(prevState => ({
+        ...prevState,
+        x: e.clientX,
+        y: e.clientY,
+      }));
+    },
+    [],
+  );
 
   const onMouseHover = useCallback(
     (e) => {
@@ -35,23 +46,25 @@ export const Cursor = () => {
 
   useEffect(() => {
     const docBody = document.body;
+    docBody.addEventListener('mousemove', onMouseMove, true);
     docBody.addEventListener('mouseenter', onMouseHover, true);
     docBody.addEventListener('mouseleave', onMouseHoverOut, true);
 
     return () => {
+      docBody.removeEventListener('mousemove', onMouseMove);
       docBody.removeEventListener('mouseenter', onMouseHover);
       docBody.removeEventListener('mouseleave', onMouseHoverOut);
     };
-  }, [onMouseHover, onMouseHoverOut]);
+  }, [onMouseMove, onMouseHover, onMouseHoverOut]);
 
   return (
-    <div className={style.Cursor}>
-      {(clientX || clientY) && (
+    <div ref={ref} className={style.Cursor}>
+      {(coords.x || coords.y) ? (
         <motion.div
           className={style.Ball}
           animate={{
-            x: clientX ? clientX - 16 : 0,
-            y: clientY ? clientY - 16 : 0,
+            x: coords.x ? coords.x - 16 : 0,
+            y: coords.y ? coords.y - 16 : 0,
             opacity: 0.2,
             scale: isHovering ? 1.5 : 1,
           }}
@@ -59,7 +72,7 @@ export const Cursor = () => {
             ease: [0.22, 1, 0.36, 1],
           }}
         />
-      )}
+      ) : ''}
     </div>
   );
 };

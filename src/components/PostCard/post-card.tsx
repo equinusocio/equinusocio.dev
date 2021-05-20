@@ -31,7 +31,7 @@ export const PostCard = ({
         <Stack rowGap="1.45rem" horizontalAlign="start">
           <Stack rowGap="0.72rem">
             <Text as="span" size="small">
-              <time dateTime={new Date(date).toISOString()}>
+              <time aria-label={`Published on ${new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(date))}.`} dateTime={new Date(date).toISOString()}>
                 {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(date))}
               </time>
             </Text>

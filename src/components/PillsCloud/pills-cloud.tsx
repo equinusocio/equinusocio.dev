@@ -4,7 +4,7 @@ import { Pill } from '@/components/Pill';
 import {
   Accessibility, Design, Figma, Geometry, Javascript, Nextjs, PenTool, WindowDev, ReactIcon, Css, Magic,
 } from '@/components/Icons';
-import { useInViewRef } from 'rooks';
+import { useIntersection } from 'react-use';
 import {
   LazyMotion, domAnimation, m, useAnimation, useReducedMotion,
 } from 'framer-motion';
@@ -13,15 +13,20 @@ import style from './pills-cloud.module.css';
 export const PillsCloud = ({
   className,
 }: HTMLAttributes<HTMLUListElement>) => {
-  const [componentRef, inView] = useInViewRef();
+  const componentRef = React.useRef(null);
+  const intersection = useIntersection(componentRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1,
+  });
   const controls = useAnimation();
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (inView) {
+    if (intersection && intersection.intersectionRatio === 1) {
       void controls.start('visible');
     }
-  }, [controls, inView]);
+  }, [controls, intersection]);
 
   const list = {
     visible: {

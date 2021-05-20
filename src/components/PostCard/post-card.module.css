@@ -7,7 +7,7 @@
 
 
   &:where(:hover, :focus-within) {
-    background-image: linear-gradient(to bottom right, hsl(var(--color-100) / 20%), hsl(var(--color-0) / 0%));
+    background-image: linear-gradient(to bottom right, hsl(var(--accent-color-alt) / 20%), hsl(var(--accent-color-alt) / 0%));
   }
 
   & a {
@@ -23,22 +23,25 @@
   &::before {
     counter-increment: post-counter;
     position: absolute;
-    top: 0;
-    left: -2.8rem;
+    bottom: 0;
+    right: -2.8rem;
     z-index: -1;
-    display: block;
+    display: none;
     color: var(--color-40);
     opacity: 0.1;
     line-height: 1;
     font-size: 7rem;
     font-weight: 50;
+    transition: all 200ms;
     content: counters(post-counter, '.', decimal-leading-zero);
 
+    @nest .PostCard:where(:hover, :focus-within)& {
+      color: hsl(var(--accent-color-alt));
+      opacity: 1;
+    }
+
     @media (--from-medium) {
-      left: unset;
-      top: unset;
-      bottom: 0;
-      right: -2.8rem;
+      display: block;
     }
   }
 }

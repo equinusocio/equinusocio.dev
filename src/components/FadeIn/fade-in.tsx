@@ -1,5 +1,5 @@
 import React, { CSSProperties, HTMLAttributes } from 'react';
-import { useInViewRef } from 'rooks';
+import { useIntersection } from 'react-use';
 
 import style from './fade-in.module.css';
 
@@ -15,7 +15,12 @@ export const FadeIn = ({
   duration = '0.8s',
   onlyDesktop,
 }: IFadeInProps) => {
-  const [componentRef, inView] = useInViewRef();
+  const componentRef = React.useRef(null);
+  const intersection = useIntersection(componentRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1,
+  });
 
   const dynamicStyle: CSSProperties = {
     '--delay': delay,
@@ -24,7 +29,7 @@ export const FadeIn = ({
 
   return (
     <div
-      data-fade-in-is-running={inView}
+      data-fade-in-is-running={intersection && intersection.intersectionRatio === 1}
       data-fade-in-only-desktop={Boolean(onlyDesktop)}
       className={style.FadeIn}
       style={dynamicStyle}

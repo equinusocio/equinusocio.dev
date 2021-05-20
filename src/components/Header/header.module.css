@@ -32,6 +32,9 @@
     &[data-header-sticky='true'] {
       position: sticky;
       top: 0;
+    }
+
+    &[data-header-sticky='true'][data-header-scrolled='true'] {
       backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
       background-color: var(--header-background);
     }

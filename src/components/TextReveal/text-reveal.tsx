@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { CSSProperties, HTMLAttributes } from 'react';
-import { useInViewRef } from 'rooks';
+import { useIntersection } from 'react-use';
 import styles from './text-reveal.module.css';
 
 interface ITextRevealProps extends HTMLAttributes<HTMLSpanElement> {
@@ -14,7 +14,12 @@ export const TextReveal = ({
   style,
   ...props
 }: ITextRevealProps) => {
-  const [componentRef, inView] = useInViewRef();
+  const componentRef = React.useRef(null);
+  const intersection = useIntersection(componentRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1,
+  });
 
   const dynamicStyle: CSSProperties = {
     '--c': color,
@@ -23,7 +28,7 @@ export const TextReveal = ({
   return (
     <span
       ref={componentRef}
-      data-text-reveal-is-running={inView}
+      data-text-reveal-is-running={intersection && intersection.intersectionRatio === 1}
       style={{ ...style, ...dynamicStyle }}
       className={clsx(styles.TextReveal, className)}
       {...props}

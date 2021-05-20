@@ -5,6 +5,7 @@ import { Stack } from '@/components/Stack';
 import { Text } from '@/components/Text';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { useRouter } from 'next/router';
+import { useWindowScroll } from 'react-use';
 import style from './header.module.css';
 
 export interface IHeaderProps extends HTMLAttributes<HTMLElement> {
@@ -17,9 +18,15 @@ export const Header = ({
   ...props
 }: IHeaderProps) => {
   const router = useRouter();
+  const { y } = useWindowScroll();
 
   return (
-    <header data-header-sticky={isSticky} className={clsx(style.Header, className)} {...props}>
+    <header
+      data-header-scrolled={isSticky && y > 100}
+      data-header-sticky={isSticky}
+      className={clsx(style.Header, className)}
+      {...props}
+    >
       <Stack as="nav" columnGap="1.22rem" inline verticalAlign="center" horizontalAlign="end">
         <Link href="/">
           <a aria-current={router.asPath === '/' ? 'page' : undefined}><Text as="span" size="small" weight="bold">HOME</Text></a>
