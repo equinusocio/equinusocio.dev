@@ -1,6 +1,8 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import { Cursor } from '@/components/Cursor';
+import dynamic from 'next/dynamic';
 import style from './page-layout.module.css';
+
+const DynamicCursor = dynamic(async () => import('@/components/Cursor').then(mod => mod.Cursor));
 
 export interface IPageLayoutProps extends HTMLAttributes<HTMLElement> {
   hero?: ReactNode;
@@ -14,7 +16,7 @@ export const PageLayout = ({
   ...props
 }: IPageLayoutProps) => (
   <main className={style.PageLayout} {...props}>
-    <Cursor />
+    <DynamicCursor />
     {(header || hero) && (
     <section>
       {header}

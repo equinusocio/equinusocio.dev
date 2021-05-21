@@ -40,7 +40,7 @@ export const Hero = () => (
           Hi, my name is
           <br aria-hidden="true" />
           {' '}
-          <img className={style.Name} width="490" height="130" src="/mattia.svg" aria-label="Mattia" alt="Mattia" />
+          <img decoding="async" className={style.Name} width="490" height="130" src="/mattia.svg" aria-label="Mattia" alt="Mattia" />
         </TextReveal>
       </Heading>
 
