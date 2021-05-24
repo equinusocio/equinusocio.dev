@@ -9,8 +9,16 @@ import { Heading } from '@/components/Heading';
 import { Prose } from '@/components/Prose';
 import { Header } from '@/components/Header';
 import { Container } from '@/components/Container';
+import raw from 'rehype-raw';
+import { Stack } from '@/components/Stack';
+import { FormattedDate } from '@/components/FormattedDate';
+import { Text } from '@/components/Text';
 
-const Post = ({ title, body }: PostType) => {
+const Post = ({ title, body, publishDate }: PostType) => {
+  const rehypePlugins: any[] = [
+    [raw, { singleTilde: false }],
+  ];
+
   const components = {
     // "image": ImageRenderer,
     h2({ children }: {children: any}) {
@@ -55,16 +63,17 @@ const Post = ({ title, body }: PostType) => {
     <PageLayout
       header={<Header isSticky />}
       hero={(
-        <>
+        <Stack rowGap="0.5rem" horizontalAlign="center" verticalAlign="center">
+          <Text size="small"><FormattedDate date={publishDate} /></Text>
           <Heading as="h1">{title}</Heading>
           <span>lorem</span>
-        </>
+        </Stack>
     )}
     >
       <Meta title={title} />
       <Container size="medium">
         <Prose>
-          <ReactMarkdown components={components}>
+          <ReactMarkdown rehypePlugins={rehypePlugins} components={components}>
             {body}
           </ReactMarkdown>
         </Prose>

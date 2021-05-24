@@ -9,13 +9,16 @@ import { Stack } from '@/components/Stack';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { Text } from '@/components/Text';
-import { PillsCloud } from '@/components/PillsCloud';
 import { Slider } from '@/components/Slider';
 import { TextReveal } from '@/components/TextReveal';
 import { GradientCard } from '@/components/GradientCard';
 import { getProjects } from '@/core/api/selectors';
 import { ProjectType } from '@/core/api/selectors/getProjects';
 import { FadeIn } from '@/components/FadeIn';
+
+import dynamic from 'next/dynamic';
+
+const DynamicPillsCloud = dynamic(async () => import('@/components/PillsCloud').then(mod => mod.PillsCloud));
 
 const Home = ({ projects }: Record<string, ProjectType[]>) => (
   <PageLayout>
@@ -46,7 +49,7 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
             </FadeIn>
 
           </Stack>
-          <PillsCloud />
+          <DynamicPillsCloud />
         </Stack>
       </Container>
     </Section>

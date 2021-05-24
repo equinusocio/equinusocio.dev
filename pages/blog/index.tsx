@@ -11,7 +11,7 @@ import React from 'react';
 
 const Blog = ({ posts }: {posts: PostType[]}) => (
   <PageLayout>
-    <Section isFirst accent>
+    <Section accent>
       <Header isSticky />
       <Container size="medium" style={{ counterReset: 'post-counter' }}>
         <Stack as="ol" rowGap="2rem" role="list">

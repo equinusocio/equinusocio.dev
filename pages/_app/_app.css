@@ -66,3 +66,7 @@ p {
   list-style: none;
   padding: 0;
 }
+
+:where(a, a:link) {
+  color: hsl(var(--accent-color-alt));
+}

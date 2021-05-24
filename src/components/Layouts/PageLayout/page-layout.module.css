@@ -1,3 +1,12 @@
 .PageLayout {
   position: relative;
 }
+
+.PageHero {
+  min-height: 70vh;
+
+  & h1 {
+    max-width: 25ch;
+    text-align: center;
+  }
+}

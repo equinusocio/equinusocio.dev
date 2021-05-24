@@ -27,15 +27,18 @@
     justify-content: flex-end;
     position: relative;
     inset: unset;
+    transition: all 200ms;
 
 
     &[data-header-sticky='true'] {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
     }
 
     &[data-header-sticky='true'][data-header-scrolled='true'] {
-      backdrop-filter: blur(20px) saturate(2.5) brightness(1.4);
+      backdrop-filter: blur(20px);
       background-color: var(--header-background);
     }
   }

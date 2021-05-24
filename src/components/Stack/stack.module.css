@@ -4,7 +4,7 @@
   display: grid;
   grid-gap: var(--rowGap) var(--columnGap);
   align-items: var(--vAlign);
-  justify-content: var(--hAlign);
+  justify-items: var(--hAlign);
 
   &[data-stack-inline='false'] {
     place-items: var(--hAlign);

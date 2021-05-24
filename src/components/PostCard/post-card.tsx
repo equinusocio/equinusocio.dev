@@ -5,6 +5,7 @@ import { Text } from '@/components/Text';
 import Link from 'next/link';
 import { Heading } from '@/components/Heading';
 import style from './post-card.module.css';
+import { FormattedDate } from '../FormattedDate';
 
 export interface IPostCardProps extends HTMLAttributes<HTMLElement> {
   url?: string;
@@ -31,9 +32,7 @@ export const PostCard = ({
         <Stack rowGap="1.45rem" horizontalAlign="start">
           <Stack rowGap="0.72rem">
             <Text as="span" size="small">
-              <time aria-label={`Published on ${new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(date))}.`} dateTime={new Date(date).toISOString()}>
-                {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date(date))}
-              </time>
+              <FormattedDate date={date} />
             </Text>
             <Heading as="h3">{ title }</Heading>
 
