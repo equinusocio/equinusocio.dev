@@ -68,5 +68,5 @@ p {
 }
 
 :where(a, a:link) {
-  color: hsl(var(--accent-color-alt));
+  color: var(--link-foreground);
 }

@@ -1,6 +1,7 @@
 :root {
   --global-background: hsl(var(--color-0));
   --global-foreground: hsl(var(--color-70));
+  --link-foreground: hsl(var(--accent-color));
 
   /* Heading */
   --heading-foreground: hsl(var(--color-80));
@@ -10,5 +11,5 @@
   --section-gradient-background: radial-gradient(circle at top, hsl(var(--gradient-color-1)), hsl(var(--gradient-color-2)));
 
   /* Header */
-  --header-background: hsl(var(--accent-color) / 70%);
+  --header-background: hsl(var(--accent-color) / 80%);
 }

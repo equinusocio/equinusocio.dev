@@ -3,6 +3,7 @@
     --gradient-color-2: var(--accent-color);
     --global-background: hsl(var(--color-100));
     --global-foreground: hsl(var(--color-10));
+    --link-foreground: hsl(var(--accent-color-alt));
 
     /* Heading */
     --heading-foreground: hsl(var(--color-0));

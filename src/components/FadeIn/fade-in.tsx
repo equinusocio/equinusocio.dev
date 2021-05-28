@@ -1,4 +1,6 @@
-import React, { CSSProperties, HTMLAttributes } from 'react';
+import React, {
+  CSSProperties, HTMLAttributes, useEffect, useState,
+} from 'react';
 import { useIntersection } from 'react-use';
 
 import style from './fade-in.module.css';
@@ -15,6 +17,7 @@ export const FadeIn = ({
   duration = '0.8s',
   onlyDesktop,
 }: IFadeInProps) => {
+  const [visible, setVisible] = useState(false);
   const componentRef = React.useRef(null);
   const intersection = useIntersection(componentRef, {
     root: null,
@@ -27,9 +30,15 @@ export const FadeIn = ({
     '--duration': duration,
   };
 
+  useEffect(() => {
+    if (intersection?.isIntersecting) {
+      setVisible(true);
+    }
+  }, [intersection]);
+
   return (
     <div
-      data-fade-in-is-running={intersection?.isIntersecting}
+      data-fade-in-is-running={visible}
       data-fade-in-only-desktop={Boolean(onlyDesktop)}
       className={style.FadeIn}
       style={dynamicStyle}
