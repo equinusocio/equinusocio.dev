@@ -1,0 +1,8 @@
+.CodeBlock {
+  position: relative;
+}
+
+.Code {
+  overflow: auto;
+  padding: 28px 1.09rem 1.09rem;
+}
