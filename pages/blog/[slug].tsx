@@ -13,6 +13,7 @@ import raw from 'rehype-raw';
 import { Stack } from '@/components/Stack';
 import { FormattedDate } from '@/components/FormattedDate';
 import { Text } from '@/components/Text';
+import { CodeBlock } from '@/components/CodeBlock';
 
 const Post = ({ title, body, publishDate }: PostType) => {
   const rehypePlugins: any[] = [
@@ -20,6 +21,7 @@ const Post = ({ title, body, publishDate }: PostType) => {
   ];
 
   const components = {
+    code: CodeBlock,
     h2({ children }: {children: any}) {
       return (
         <Heading as="h2">
