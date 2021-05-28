@@ -5,6 +5,10 @@
     --global-foreground: hsl(var(--color-10));
     --link-foreground: hsl(var(--accent-color-alt));
 
+    /* Code Highlight */
+    --code-background: hsl(var(--color-90));
+    --code-foreground: hsl(var(--color-10));
+
     /* Heading */
     --heading-foreground: hsl(var(--color-0));
 

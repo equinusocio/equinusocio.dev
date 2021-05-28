@@ -1,8 +1,13 @@
 .CodeBlock {
   position: relative;
+  width: 100vw;
+  max-width: 80ch;
+  margin-left: calc(50%);
+  transform: translateX(-50%);
 }
 
 .Code {
   overflow: auto;
+  border-radius: 0.72rem;
   padding: 28px 1.09rem 1.09rem;
 }

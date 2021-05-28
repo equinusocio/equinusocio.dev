@@ -2,8 +2,8 @@ import { PrismTheme } from 'prism-react-renderer';
 
 const theme: PrismTheme = {
   plain: {
-    color: 'hsl(var(--color-50))',
-    backgroundColor: 'hsl(var(--color-100))',
+    color: 'hsl(var(--color-10))',
+    backgroundColor: 'hsl(var(--color-90))',
   },
   styles: [{
     types: ['changed'],
@@ -14,25 +14,35 @@ const theme: PrismTheme = {
   }, {
     types: ['deleted'],
     style: {
-      color: 'red',
+      color: '#FF1A43',
       fontStyle: 'italic',
     },
   }, {
-    types: ['inserted', 'attr-name'],
+    types: ['inserted'],
     style: {
-      color: 'hsl(var(--color-80))',
+      color: 'hsl(var(--accent-color-alt))',
       fontStyle: 'italic',
+    },
+  }, {
+    types: ['attr-name'],
+    style: {
+      color: '#A18EEF',
+    },
+  }, {
+    types: ['attr-value'],
+    style: {
+      color: '#A9EFA3',
     },
   }, {
     types: ['comment'],
     style: {
-      color: 'var(--color-70)',
+      color: 'hsl(var(--color-60))',
       fontStyle: 'italic',
     },
   }, {
     types: ['string', 'url'],
     style: {
-      color: 'hsl(var(--color-90))',
+      color: '#A9EFA3',
     },
   }, {
     types: ['variable'],
@@ -47,7 +57,7 @@ const theme: PrismTheme = {
   }, {
     types: ['builtin', 'char', 'constant', 'function'],
     style: {
-      color: 'cyan',
+      color: '#A18EEF',
     },
   }, {
     types: ['constant'],
@@ -59,33 +69,33 @@ const theme: PrismTheme = {
     // so that punctuations are not italicised
     types: ['punctuation'],
     style: {
-      color: 'hotpink',
+      color: '#E382BC',
     },
   }, {
     types: ['selector', 'doctype'],
     style: {
-      color: 'hsl(var(--color-100))',
+      color: '#FEE17C',
       fontStyle: 'italic',
     },
   }, {
     types: ['class-name'],
     style: {
-      color: 'hsl(var(--color-90))',
+      color: 'hsl(var(--color-10))',
     },
   }, {
     types: ['tag', 'operator', 'keyword'],
     style: {
-      color: 'hsl(var(--color-100))',
+      color: '#70E3EB',
     },
   }, {
     types: ['boolean'],
     style: {
-      color: 'red',
+      color: '#FF1A43',
     },
   }, {
     types: ['property'],
     style: {
-      color: 'blue',
+      color: '#70E3EB',
     },
   }, {
     types: ['namespace'],
