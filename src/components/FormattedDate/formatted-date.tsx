@@ -1,18 +1,19 @@
 import React, { HTMLAttributes } from 'react';
 
 export interface IDateProps extends HTMLAttributes<HTMLTimeElement> {
-  date?: Date | string;
+  date: string;
 }
 
-export const FormattedDate = ({ date = '' }: IDateProps) => {
+export const FormattedDate = ({ date }: IDateProps) => {
   const timeDate: Date = new Date(date);
+  const humanDate = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(timeDate);
 
   return (
     <time
-      aria-label={`Published on ${new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(timeDate)}.`}
-      dateTime={timeDate.toISOString()}
+      aria-label={`Published on ${timeDate.toLocaleDateString()}.`}
+      dateTime={date}
     >
-      {new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(timeDate)}
+      {humanDate}
     </time>
   );
 };

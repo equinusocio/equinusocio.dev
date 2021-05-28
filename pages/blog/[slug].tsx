@@ -20,7 +20,6 @@ const Post = ({ title, body, publishDate }: PostType) => {
   ];
 
   const components = {
-    // "image": ImageRenderer,
     h2({ children }: {children: any}) {
       return (
         <Heading as="h2">
@@ -56,7 +55,6 @@ const Post = ({ title, body, publishDate }: PostType) => {
         </Heading>
       );
     },
-    // "code": CodeRenderer
   };
 
   return (
@@ -64,7 +62,9 @@ const Post = ({ title, body, publishDate }: PostType) => {
       header={<Header isSticky />}
       hero={(
         <Stack rowGap="0.5rem" horizontalAlign="center" verticalAlign="center">
-          <Text size="small"><FormattedDate date={publishDate} /></Text>
+          <Text size="small">
+            {publishDate && <FormattedDate date={publishDate} />}
+          </Text>
           <Heading as="h1">{title}</Heading>
           <span>lorem</span>
         </Stack>
