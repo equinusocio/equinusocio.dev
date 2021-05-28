@@ -10,7 +10,7 @@ export const FormattedDate = ({ date }: IDateProps) => {
 
   return (
     <time
-      aria-label={`Published on ${timeDate.toLocaleDateString()}.`}
+      aria-label={`Published on ${humanDate}.`}
       dateTime={date}
     >
       {humanDate}
