@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Heading } from '@/components/Heading';
 import style from './post-card.module.css';
 import { FormattedDate } from '../FormattedDate';
+import { TextReveal } from '../TextReveal';
 
 export interface IPostCardProps extends HTMLAttributes<HTMLElement> {
   url?: string;
@@ -34,7 +35,7 @@ export const PostCard = ({
             <Text as="span" size="small">
               <FormattedDate date={date} />
             </Text>
-            <Heading as="h3">{ title }</Heading>
+            <TextReveal><Heading as="h3">{ title }</Heading></TextReveal>
 
             <Text className={style.Abstract}>
               {abstract}

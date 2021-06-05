@@ -15,12 +15,14 @@
       var(--c2) 100%
     );
 
-  &::before {
-    display: block;
-    content: '';
-    width: 100%;
-    padding-top: calc((1 / 1) * 100%);
-    pointer-events: none;
+  @supports not (aspect-ratio: 1/1) {
+    &::before {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-top: calc((1 / 1) * 100%);
+      pointer-events: none;
+    }
   }
 
   & > * {

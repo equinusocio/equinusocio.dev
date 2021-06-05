@@ -23,7 +23,7 @@ const DynamicPillsCloud = dynamic(async () => import('@/components/PillsCloud').
 const Home = ({ projects }: Record<string, ProjectType[]>) => (
   <PageLayout>
 
-    <Section bg="bg-1.svg" accent isFirst>
+    <Section bg="bg-1.svg" accent isFirst verticalAlign="start">
       <Header />
       <Hero />
     </Section>

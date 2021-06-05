@@ -55,6 +55,11 @@ const theme: PrismTheme = {
       color: 'orange',
     },
   }, {
+    types: ['unit'],
+    style: {
+      color: 'darkorange',
+    },
+  }, {
     types: ['builtin', 'char', 'constant', 'function'],
     style: {
       color: '#A18EEF',

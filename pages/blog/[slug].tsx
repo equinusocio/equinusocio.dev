@@ -17,7 +17,7 @@ import { CodeBlock } from '@/components/CodeBlock';
 
 const Post = ({ title, body, publishDate }: PostType) => {
   const rehypePlugins: any[] = [
-    [raw, { singleTilde: false }],
+    raw,
   ];
 
   const components = {
