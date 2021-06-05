@@ -14,8 +14,12 @@ import { Stack } from '@/components/Stack';
 import { FormattedDate } from '@/components/FormattedDate';
 import { Text } from '@/components/Text';
 import { CodeBlock } from '@/components/CodeBlock';
+import { Tag } from '@/components/Tag';
+import { slugify } from '@/core/utils/slugify';
 
-const Post = ({ title, body, publishDate }: PostType) => {
+const Post = ({
+  title, body, publishDate, tags,
+}: PostType) => {
   const rehypePlugins: any[] = [
     raw,
   ];
@@ -68,7 +72,7 @@ const Post = ({ title, body, publishDate }: PostType) => {
             {publishDate && <FormattedDate date={publishDate} />}
           </Text>
           <Heading as="h1">{title}</Heading>
-          <span>lorem</span>
+          {tags.map(item => <Tag url={`/blog/tag/${slugify(item)}`} key={item}>{item}</Tag>)}
         </Stack>
     )}
     >
