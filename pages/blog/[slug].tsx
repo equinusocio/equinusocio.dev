@@ -72,7 +72,7 @@ const Post = ({
             {publishDate && <FormattedDate date={publishDate} />}
           </Text>
           <Heading as="h1">{title}</Heading>
-          {tags.map(item => <Tag url={`/blog/tag/${slugify(item)}`} key={item}>{item}</Tag>)}
+          {tags?.map(item => <Tag url={`/blog/tag/${slugify(item)}`} key={item}>{item}</Tag>)}
         </Stack>
     )}
     >
