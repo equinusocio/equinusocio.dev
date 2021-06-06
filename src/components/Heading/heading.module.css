@@ -5,7 +5,7 @@
 
     /* stylelint-disable-next-line number-max-precision */
     --headingsScale: 1.333;
-    --headingBaseSize: 1rem;
+    --headingBaseSize: 0.6rem;
 
     display: block;
     font-family: 'Playfair Display', serif;
@@ -20,8 +20,8 @@
       line-height: 1;
     }
 
-    @media (width <= 48em) {
-      --headingBaseSize: 0.72rem;
+    @media (--from-small) {
+      --headingBaseSize: 1rem;
     }
   }
 

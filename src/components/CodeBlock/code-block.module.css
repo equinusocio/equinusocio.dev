@@ -2,7 +2,8 @@
   position: relative;
   width: 100vw;
   max-width: 40rem;
-  margin-left: calc(50%);
+  margin-left: 50%;
+  padding: 0 0.5rem;
   transform: translateX(-50%);
 }
 
