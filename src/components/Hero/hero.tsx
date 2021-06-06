@@ -27,6 +27,10 @@ export const Hero = () => (
         srcSet="https://images.ctfassets.net/gz0sygvqczyz/13KLuNzRcXJPhoCUjVxG7o/970b9a154356879e19bf46d1753aef12/mattia_astorino.webp?w=1058&h=1392 2x"
         type="image/webp"
       />
+      <source
+        srcSet="https://images.ctfassets.net/gz0sygvqczyz/13KLuNzRcXJPhoCUjVxG7o/970b9a154356879e19bf46d1753aef12/mattia_astorino.webp?w=1058&h=1392&fm=jpg 2x"
+        type="image/jpg"
+      />
       <img
         className={style.Image}
         src="https://images.ctfassets.net/gz0sygvqczyz/13KLuNzRcXJPhoCUjVxG7o/970b9a154356879e19bf46d1753aef12/mattia_astorino.webp?w=529&h=696&fm=jpg"
