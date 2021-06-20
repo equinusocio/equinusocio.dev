@@ -1,11 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Feed } from 'feed';
-import { getPosts } from '@/core/api/selectors';
 import marked from 'marked';
 import sanitizeHtml from 'sanitize-html';
 
+type PostItem = {
+  id: string;
+  title: string;
+  description: string;
+  publishDate: string;
+  slug: string;
+  body: string;
+}
+
 export default async function handler(_req: any, res: any) {
-  const items: Record<string, any>[] = await getPosts();
+  const data = await fetch('http://localhost:3000/api/posts');
+  const items = await data.json();
 
   const feed = new Feed({
     title: 'Mattia Astorino - UX Engineer',
@@ -28,8 +37,13 @@ export default async function handler(_req: any, res: any) {
   });
 
   items.forEach(({
-    id, title, description, publishDate, slug, body,
-  }) => {
+    id,
+    title,
+    description,
+    publishDate,
+    slug,
+    body,
+  }: PostItem) => {
     feed.addItem({
       id,
       author: [

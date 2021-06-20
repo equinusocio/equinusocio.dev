@@ -12,11 +12,10 @@ import { Text } from '@/components/Text';
 import { Slider } from '@/components/Slider';
 import { TextReveal } from '@/components/TextReveal';
 import { GradientCard } from '@/components/GradientCard';
-import { getProjects } from '@/core/api/selectors';
-import { ProjectType } from '@/core/api/selectors/getProjects';
 import { FadeIn } from '@/components/FadeIn';
 
 import dynamic from 'next/dynamic';
+import { ProjectType } from './api/projects';
 
 const DynamicPillsCloud = dynamic(async () => import('@/components/PillsCloud').then(mod => mod.PillsCloud));
 
@@ -101,7 +100,8 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
 );
 
 export const getStaticProps = async () => {
-  const projects = await getProjects();
+  const data = await fetch('http://localhost:3000/api/projects');
+  const projects = await data.json();
 
   return {
     props: { projects },

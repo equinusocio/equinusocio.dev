@@ -5,9 +5,8 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { PostCard } from '@/components/PostCard';
 import { Section } from '@/components/Section';
 import { Stack } from '@/components/Stack';
-import { getPosts, getPostsByTag } from '@/core/api/selectors';
-import { PostType } from '@/core/api/selectors/getPost';
 import { Params } from 'next/dist/next-server/server/router';
+import { PostType } from 'pages/api/posts';
 import React from 'react';
 
 const TagName = ({ tagName, posts }: {tagName: string; posts: PostType[]}) => (
@@ -38,7 +37,8 @@ const TagName = ({ tagName, posts }: {tagName: string; posts: PostType[]}) => (
 );
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts();
+  const data = await fetch('http://localhost:3000/api/posts');
+  const posts = await data.json();
 
   const paths = posts.map((post: Partial<PostType>) => ({
     params: {
@@ -50,7 +50,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: Params) => {
-  const posts = await getPostsByTag(params.id.replace('-', ' '));
+  const data = await fetch(`http://localhost:3000/api/tag/${params.id.replace('-', ' ')}`);
+  const posts = await data.json();
 
   return {
     props: {

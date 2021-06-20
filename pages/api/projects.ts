@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-
 import { client } from '@/core/api/client';
 
 export type ProjectType = {
@@ -15,7 +14,7 @@ export type ProjectsResponse = {
   items: ProjectType[];
 }
 
-export async function getProjects() {
+async function getProjects() {
   try {
     const projects = await client.getEntries<any>({
       content_type: 'project',
@@ -30,4 +29,10 @@ export async function getProjects() {
   } catch {
     return [];
   }
+}
+
+export default async function handler(_req: any, res: any) {
+  const items: Record<string, any>[] = await getProjects();
+  res.status(200).json(items);
+  res.end();
 }

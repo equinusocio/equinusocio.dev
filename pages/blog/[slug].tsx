@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import ReactMarkdown from 'react-markdown';
-import { getPost } from '@/core/api/selectors';
-import { PostType } from '@/core/api/selectors/getPost';
 import { Params } from 'next/dist/next-server/server/router';
 import { PageLayout } from '@/components/Layouts/PageLayout';
 import { Heading } from '@/components/Heading';
@@ -16,6 +14,7 @@ import { Text } from '@/components/Text';
 import { CodeBlock } from '@/components/CodeBlock';
 import { Tag } from '@/components/Tag';
 import { slugify } from '@/core/utils/slugify';
+import { PostType } from 'pages/api/posts';
 
 const Post = ({
   title, body, publishDate, tags,
@@ -102,7 +101,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: Params) => {
-  const post = await getPost(params.slug);
+  const data = await fetch(`http://localhost:3000/api/${params.slug}`);
+  const post = await data.json();
 
   return {
     props: { ...post },
