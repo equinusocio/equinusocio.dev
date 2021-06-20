@@ -37,7 +37,7 @@ const TagName = ({ tagName, posts }: {tagName: string; posts: PostType[]}) => (
 );
 
 export const getStaticPaths = async () => {
-  const data = await fetch('http://localhost:3000/api/posts');
+  const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/posts`);
   const posts = await data.json();
 
   const paths = posts.map((post: Partial<PostType>) => ({
@@ -50,7 +50,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: Params) => {
-  const data = await fetch(`http://localhost:3000/api/tag/${params.id.replace('-', ' ')}`);
+  const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/tag/${params.id.replace('-', ' ')}`);
   const posts = await data.json();
 
   return {

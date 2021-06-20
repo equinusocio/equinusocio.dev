@@ -13,7 +13,7 @@ type PostItem = {
 }
 
 export default async function handler(_req: any, res: any) {
-  const data = await fetch('http://localhost:3000/api/posts');
+  const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/posts`);
   const items = await data.json();
 
   const feed = new Feed({

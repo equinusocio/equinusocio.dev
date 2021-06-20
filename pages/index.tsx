@@ -100,7 +100,7 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
 );
 
 export const getStaticProps = async () => {
-  const data = await fetch('http://localhost:3000/api/projects');
+  const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/projects`);
   const projects = await data.json();
 
   return {

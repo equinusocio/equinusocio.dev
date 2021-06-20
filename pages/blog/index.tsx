@@ -34,7 +34,7 @@ const Blog = ({ posts }: {posts: PostType[]}) => (
 );
 
 export const getStaticProps = async () => {
-  const data = await fetch('http://localhost:3000/api/posts');
+  const data = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/posts`, { headers: { Accept: 'application/json, text/plain, */*', 'User-Agent': '*' } });
   const posts = await data.json();
 
   return {
