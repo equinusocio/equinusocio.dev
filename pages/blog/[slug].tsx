@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta } from '@/components/Meta';
 import ReactMarkdown from 'react-markdown';
-import { getPost, getPosts } from '@/core/api/selectors';
+import { getPost } from '@/core/api/selectors';
 import { PostType } from '@/core/api/selectors/getPost';
 import { Params } from 'next/dist/next-server/server/router';
 import { PageLayout } from '@/components/Layouts/PageLayout';
@@ -89,7 +89,8 @@ const Post = ({
 };
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts();
+  const data = await fetch('http://localhost:3000/api/posts');
+  const posts = await data.json();
 
   const paths = posts.map((post: Partial<PostType>) => ({
     params: {

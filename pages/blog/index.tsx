@@ -5,7 +5,6 @@ import { PageLayout } from '@/components/Layouts/PageLayout';
 import { PostCard } from '@/components/PostCard';
 import { Section } from '@/components/Section';
 import { Stack } from '@/components/Stack';
-import { getPosts } from '@/core/api/selectors';
 import { PostType } from '@/core/api/selectors/getPost';
 import React from 'react';
 
@@ -35,8 +34,8 @@ const Blog = ({ posts }: {posts: PostType[]}) => (
 );
 
 export const getStaticProps = async () => {
-  const posts = await getPosts();
-
+  const data = await fetch('http://localhost:3000/api/posts');
+  const posts = await data.json();
   return {
     props: { posts },
     revalidate: 120,

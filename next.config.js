@@ -5,7 +5,6 @@
 */
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withPlugins = require('next-compose-plugins');
-const path = require('path');
 
 module.exports = withPlugins([
   [
@@ -15,7 +14,4 @@ module.exports = withPlugins([
   ],
 ], {
   trailingSlash: true,
-  future: {
-    webpack5: true,
-  },
 });

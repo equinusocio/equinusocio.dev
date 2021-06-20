@@ -43,8 +43,22 @@ const Home = ({ projects }: Record<string, ProjectType[]>) => (
               </Text>
             </FadeIn>
             <FadeIn delay="0.2s">
-              <Text>
-                <strong>This is the front of the front-end.</strong>
+              <Text as="blockquote">
+                <strong>❝This is the front of the front-end.❞</strong>
+                <footer>
+                  <cite>
+                    —
+                    {' '}
+                    {' '}
+                    <a
+                      href="https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Brad Frost
+                    </a>
+                  </cite>
+                </footer>
               </Text>
             </FadeIn>
 
